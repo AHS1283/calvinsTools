@@ -1,0 +1,180 @@
+.menu-section {
+  padding: 105px 7%;
+  background: #f3f0e9;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.section-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(45px, 5vw, 70px);
+  letter-spacing: -3px;
+  line-height: 0.95;
+}
+
+.section-head h2 em {
+  color: var(--accent);
+  font-family: "Playfair Display", serif;
+}
+
+.section-head > p {
+  margin: 0;
+  color: var(--muted);
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.menu-card {
+  min-height: 365px;
+  padding: 23px;
+  border: 1px solid #e5e0d6;
+  border-radius: var(--radius);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: 0.35s ease;
+  animation: cardUp 0.7s ease both;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(30,25,15,0.08);
+}
+
+.menu-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.menu-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.menu-card-top {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa69d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.menu-tag {
+  color: var(--accent);
+  letter-spacing: 1.4px;
+}
+
+.food-icon {
+  width: 120px;
+  height: 120px;
+  margin: 35px auto 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f8f5ed;
+  font-size: 57px;
+  filter: drop-shadow(0 15px 10px rgba(30,25,15,0.08));
+  transition: transform 0.35s ease;
+}
+
+.menu-card:hover .food-icon {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.menu-card h3 {
+  margin: 0;
+  font-size: 23px;
+  letter-spacing: -0.7px;
+}
+
+.menu-card p {
+  margin: 9px 0 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.menu-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-bottom strong {
+  font-size: 18px;
+}
+
+.menu-bottom button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-size: 21px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.menu-bottom button:hover {
+  background: var(--accent);
+  transform: rotate(90deg);
+}
+
+@keyframes cardUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu-card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-section {
+    padding: 75px 20px;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head > p {
+    margin-top: 18px;
+    text-align: left;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card:last-child {
+    grid-column: auto;
+  }
+}

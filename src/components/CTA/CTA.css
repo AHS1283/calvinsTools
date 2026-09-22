@@ -1,0 +1,53 @@
+.cta-section {
+  padding: 120px 20px;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+
+.cta-small {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.cta-section h2 {
+  margin: 20px 0 30px;
+  font-size: clamp(57px, 9vw, 120px);
+  line-height: 0.86;
+  letter-spacing: -5px;
+}
+
+.cta-section h2 em {
+  color: var(--accent);
+  font-family: "Playfair Display", serif;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #99958d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cta-link span {
+  transition: transform 0.25s ease;
+}
+
+.cta-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 600px) {
+  .cta-section {
+    padding: 90px 20px;
+  }
+
+  .cta-section h2 {
+    letter-spacing: -3px;
+  }
+}

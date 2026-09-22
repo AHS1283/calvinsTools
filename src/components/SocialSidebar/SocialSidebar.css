@@ -1,0 +1,278 @@
+/* =========================================================
+   SOCIAL SIDEBAR
+   WHITE ROUNDED ICONS
+========================================================= */
+
+.social-sidebar {
+  position: fixed;
+
+  top: 50%;
+  right: 18px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 10px;
+
+  z-index: 9999;
+}
+
+/* =========================================================
+   EXPLORE ALL TRAILERS CTA
+========================================================= */
+
+.social-sidebar-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  height: 46px;
+  padding: 0 18px;
+
+  background: #17160f;
+  color: #f3efe9;
+
+  border: 1px solid #17160f;
+  border-radius: 999px;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 4px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.social-sidebar-cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #c1602b;
+  color: #ffffff;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.social-sidebar-cta:hover {
+  background: #c1602b;
+  border-color: #c1602b;
+  color: #ffffff;
+
+  transform: translateX(-5px);
+
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.22);
+}
+
+.social-sidebar-cta:hover .social-sidebar-cta-icon {
+  background: #ffffff;
+  color: #17160f;
+  transform: rotate(45deg);
+}
+
+.social-sidebar-cta:active {
+  transform: translateX(-3px) scale(0.97);
+}
+
+/* =========================================================
+   ICON BUTTON
+========================================================= */
+
+.social-sidebar-item {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e2dc;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.social-sidebar-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-sidebar-icon svg {
+  width: 25px;
+  height: 25px;
+
+  display: block;
+}
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.social-sidebar-item.whatsapp {
+  color: #25d366;
+}
+
+.social-sidebar-item.instagram {
+  color: #d62976;
+}
+
+.social-sidebar-item.facebook {
+  color: #1877f2;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.social-sidebar-item:hover {
+  transform: translateX(-5px) scale(1.08);
+
+  background: #ffffff;
+
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.17);
+}
+
+.social-sidebar-item.whatsapp:hover {
+  border-color: #25d366;
+}
+
+.social-sidebar-item.instagram:hover {
+  border-color: #d62976;
+}
+
+.social-sidebar-item.facebook:hover {
+  border-color: #1877f2;
+}
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.social-sidebar-item:active {
+  transform: translateX(-3px) scale(0.96);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .social-sidebar {
+    right: 10px;
+
+    gap: 8px;
+  }
+
+  .social-sidebar-cta {
+    height: 40px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .social-sidebar-cta-icon {
+    width: 19px;
+    height: 19px;
+    font-size: 12px;
+  }
+
+  .social-sidebar-item {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+  }
+
+  .social-sidebar-icon,
+  .social-sidebar-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .social-sidebar-item:hover {
+    transform: translateX(-3px) scale(1.05);
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .social-sidebar {
+    right: 7px;
+
+    gap: 6px;
+  }
+
+  .social-sidebar-cta-text {
+    display: none;
+  }
+
+  .social-sidebar-cta {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .social-sidebar-cta-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+
+  .social-sidebar-item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-sidebar-icon,
+  .social-sidebar-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+}

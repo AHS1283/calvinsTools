@@ -1,0 +1,531 @@
+/* =========================================
+   WHY CALVIN'S TOOLS
+   Matches the editorial system used across
+   Trailer Solutions / Featured Trailers:
+   Times New Roman, ink/rust palette, flat shadows
+   ========================================= */
+
+.why-calvins-section {
+  --ink: #17160f;
+  --muted: #777267;
+  --soft: #a8a398;
+  --line: #ded9ce;
+  --accent: #c1602b;
+  --accent-ink: #ffffff;
+
+  --shadow-xs: 0 1px 2px rgba(23, 22, 15, 0.06);
+  --shadow-sm:
+    0 1px 2px rgba(23, 22, 15, 0.07),
+    0 6px 16px -8px rgba(23, 22, 15, 0.16);
+  --shadow-md:
+    0 2px 4px rgba(23, 22, 15, 0.06),
+    0 18px 34px -16px rgba(23, 22, 15, 0.22),
+    0 40px 70px -32px rgba(23, 22, 15, 0.2);
+  --shadow-lg:
+    0 3px 6px rgba(23, 22, 15, 0.07),
+    0 22px 40px -16px rgba(23, 22, 15, 0.26),
+    0 60px 100px -30px rgba(23, 22, 15, 0.26);
+  --shadow-accent:
+    0 10px 24px -10px rgba(193, 96, 43, 0.45),
+    0 2px 6px rgba(193, 96, 43, 0.3);
+
+  --ease: cubic-bezier(0.16, 0.84, 0.24, 1);
+
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  color: var(--ink);
+  overflow: hidden;
+  padding: 100px 0 90px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.why-calvins-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 70px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.why-calvins-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+}
+
+.why-calvins-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.why-calvins-label span {
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+.why-calvins-label i {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--line);
+}
+
+.why-calvins-location {
+  color: var(--soft);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.why-calvins-header {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 60px;
+  padding: 25px 0 50px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 45px;
+}
+
+.why-calvins-heading > span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.why-calvins-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(50px, 5.6vw, 76px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.why-calvins-heading h2 em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.why-calvins-intro {
+  max-width: 360px;
+}
+
+.why-calvins-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   REASONS — editorial card grid
+   ========================================= */
+
+.why-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  width: 100%;
+}
+
+.why-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 8px;
+
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 30px;
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+  transform: translateY(10px);
+  opacity: 0;
+
+  transition:
+    transform 420ms var(--ease),
+    opacity 420ms var(--ease),
+    box-shadow 240ms var(--ease),
+    border-color 240ms var(--ease);
+}
+
+.why-row-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* fallback: if no JS toggles why-row-visible, reveal via CSS animation */
+@keyframes whyCardIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.why-row:not(.why-row-visible) {
+  animation: whyCardIn 0.6s var(--ease) both;
+}
+
+.why-row:nth-child(1) { animation-delay: 0.05s; }
+.why-row:nth-child(2) { animation-delay: 0.15s; }
+.why-row:nth-child(3) { animation-delay: 0.25s; }
+.why-row:nth-child(4) { animation-delay: 0.35s; }
+.why-row:nth-child(5) { animation-delay: 0.45s; }
+.why-row:nth-child(6) { animation-delay: 0.55s; }
+
+.why-row:hover,
+.why-row.active {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* thin accent bar across the top, revealed on hover/active */
+.why-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.why-row:hover::before,
+.why-row.active::before {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   NUMBER BADGE
+   (numbered circle, matching the badge style
+   used in Trailer Solutions / Featured Trailers)
+   ========================================= */
+
+.why-row-number {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--muted);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  box-shadow: var(--shadow-xs);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.why-row.active .why-row-number,
+.why-row:hover .why-row-number {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: var(--shadow-accent);
+  transform: scale(1.06);
+}
+
+/* =========================================
+   CARD TEXT
+   ========================================= */
+
+.why-row-title {
+  grid-column: 2;
+  grid-row: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+}
+
+.why-row-title h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.why-row-arrow {
+  flex-shrink: 0;
+  margin-left: 12px;
+  color: var(--soft);
+  font-size: 17px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.why-row:hover .why-row-arrow,
+.why-row.active .why-row-arrow {
+  color: var(--accent);
+  transform: translate(3px, -3px);
+}
+
+.why-row-description {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+}
+
+.why-row-description p {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* progress tick / featured reason — unused in card layout */
+.why-row-progress,
+.why-feature {
+  display: none;
+}
+
+/* =========================================
+   BOTTOM
+   ========================================= */
+
+.why-calvins-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr auto;
+  align-items: center;
+  gap: 30px;
+  margin-top: 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.why-bottom-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.why-bottom-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.why-calvins-bottom p {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.why-bottom-count {
+  justify-self: end;
+  color: var(--ink);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .why-calvins-section {
+    padding: 80px 0 75px;
+  }
+
+  .why-calvins-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0 35px;
+    margin-bottom: 35px;
+  }
+
+  .why-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .why-calvins-section {
+    padding: 65px 0 60px;
+  }
+
+  .why-calvins-inner {
+    width: calc(100% - 28px);
+  }
+
+  .why-calvins-top {
+    padding-bottom: 12px;
+  }
+
+  .why-calvins-location {
+    display: none;
+  }
+
+  .why-calvins-heading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+  }
+
+  .why-calvins-intro {
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
+  .why-calvins-intro p {
+    font-size: 14px;
+  }
+
+  .why-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .why-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    row-gap: 6px;
+    padding: 18px 14px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .why-row-number,
+  .why-row-title,
+  .why-row-description {
+    grid-column: 1;
+  }
+
+  .why-row-number { grid-row: 1; }
+  .why-row-title { grid-row: 2; }
+  .why-row-description { grid-row: 3; }
+
+  .why-row-title {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .why-row-number {
+    width: 46px;
+    height: 46px;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .why-row-arrow {
+    display: none;
+  }
+
+  .why-row-title h3 {
+    font-size: 15px;
+  }
+
+  .why-row-description p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .why-calvins-bottom {
+    display: block;
+    margin-top: 32px;
+    padding-top: 22px;
+  }
+
+  .why-calvins-bottom p {
+    margin: 10px 0 0;
+    font-size: 14px;
+  }
+
+  .why-bottom-count {
+    justify-self: start;
+    margin-top: 12px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 420px) {
+  .why-calvins-heading h2 {
+    font-size: 34px;
+  }
+
+  .why-row {
+    padding: 16px 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .why-row {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

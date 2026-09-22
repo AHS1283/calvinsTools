@@ -1,0 +1,175 @@
+/* =====================================================
+   BOOKING MODAL — matches navbar's warm cream/rust/ink theme
+===================================================== */
+
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(23, 22, 15, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.booking-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: #faf8f3;
+  border: 1px solid #d8d1c3;
+
+  padding: 34px 30px;
+  box-sizing: border-box;
+
+  font-family: "Times New Roman", Times, serif;
+  color: #17160f;
+
+  box-shadow: 0 30px 70px rgba(30, 25, 15, 0.25);
+}
+
+.booking-modal h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.booking-subtitle {
+  margin: 0 0 20px;
+  color: #6f6c5c;
+  font-size: 14px;
+}
+
+.booking-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d8d1c3;
+  border-radius: 50%;
+  background: #ffffff;
+
+  font-size: 20px;
+  line-height: 1;
+  color: #17160f;
+
+  cursor: pointer;
+}
+
+.booking-close:hover {
+  background: #c1602b;
+  border-color: #c1602b;
+  color: #ffffff;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #6f6c5c;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  color: #17160f;
+
+  padding: 10px 12px;
+
+  background: #ffffff;
+  border: 1px solid #d8d1c3;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: #c1602b;
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+.booking-error {
+  margin: 0;
+  color: #b3261e;
+  font-size: 13px;
+}
+
+.booking-submit {
+  margin-top: 6px;
+
+  min-height: 44px;
+
+  background: #17160f;
+  color: #ffffff;
+
+  border: 1px solid #17160f;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.booking-submit:hover:not(:disabled) {
+  background: #c1602b;
+  border-color: #c1602b;
+}
+
+.booking-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.booking-success {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.booking-success p {
+  color: #6f6c5c;
+  font-size: 15px;
+  margin: 12px 0 22px;
+}
+
+@media (max-width: 480px) {
+  .booking-modal {
+    padding: 26px 20px;
+  }
+}

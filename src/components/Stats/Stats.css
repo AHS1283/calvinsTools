@@ -1,0 +1,814 @@
+/* =========================================================
+   CALVIN'S TOOLS — MOVING STATS
+   (updated: icon tiles + card hover treatment, wcu-style)
+========================================================= */
+
+.stats-section {
+  --bg: #f5f3ed;
+  --ink: #17160f;
+  --muted: #77736a;
+  --soft: #a5a097;
+  --line: rgba(23, 22, 15, 0.12);
+  --accent: #c1602b;
+  --accent-light: #e8a375;
+  --card-shadow: 0 18px 60px rgba(23, 22, 15, 0.10);
+  --card-shadow-soft: 0 8px 22px rgba(23, 22, 15, 0.07);
+  --ease: cubic-bezier(.16,.84,.24,1);
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--bg);
+
+  color: var(--ink);
+
+  font-family: "Times New Roman", Times, serif;
+
+  padding: 110px 0 90px;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.stats-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: -390px;
+  right: -250px;
+
+  border: 1px solid rgba(193, 96, 43, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.stats-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  bottom: -300px;
+  left: -220px;
+
+  border: 1px solid rgba(23, 22, 15, 0.06);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.stats-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1240px,
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.stats-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 55px;
+}
+
+.stats-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.stats-label span {
+  color: var(--accent);
+
+  font-size: 12px;
+}
+
+.stats-label i {
+  display: block;
+
+  width: 30px;
+
+  height: 1px;
+
+  background: var(--accent);
+}
+
+.stats-note {
+  color: var(--soft);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.stats-header {
+  display: grid;
+
+  grid-template-columns: 1.35fr 0.65fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  padding-bottom: 60px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.stats-heading > span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--accent);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.stats-heading h2 {
+  margin: 0;
+
+  font-size: clamp(
+    55px,
+    6.4vw,
+    88px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+}
+
+.stats-heading h2 em {
+  color: var(--accent);
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.stats-intro {
+  max-width: 400px;
+
+  justify-self: end;
+}
+
+.stats-intro p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.stats-timeline {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 24px;
+
+  margin-top: 55px;
+
+  padding-bottom: 0;
+}
+
+
+/* =========================================================
+   HORIZONTAL LINE — unused in the new card layout
+========================================================= */
+
+.timeline-line,
+.timeline-progress {
+  display: none;
+}
+
+
+/* =========================================================
+   STAT CARD (icon + number + description)
+========================================================= */
+
+.timeline-item {
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  column-gap: 18px;
+  row-gap: 0;
+
+  min-width: 0;
+
+  padding: 28px 26px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(23, 22, 15, 0.08);
+
+  background: #ffffff;
+
+  box-shadow: var(--card-shadow-soft);
+
+  text-align: left;
+
+  transition:
+    transform 320ms var(--ease),
+    box-shadow 280ms var(--ease),
+    border-color 280ms var(--ease);
+}
+
+.timeline-item:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(193, 96, 43, 0.25);
+
+  box-shadow: var(--card-shadow);
+}
+
+
+/* =========================================================
+   ICON TILE — soft peach square, one per stat
+========================================================= */
+
+.timeline-item::before {
+  content: "";
+
+  display: flex;
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 16px;
+
+  font-size: 24px;
+  line-height: 1;
+
+  background: #fdece0;
+
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-item:nth-of-type(1)::before { content: "🚚"; }
+.timeline-item:nth-of-type(2)::before { content: "🏙️"; }
+.timeline-item:nth-of-type(3)::before { content: "🏢"; }
+.timeline-item:nth-of-type(4)::before { content: "⏳"; }
+
+.timeline-item:hover::before {
+  transform: scale(1.06);
+  background: #fbe0cb;
+}
+
+
+/* =========================================================
+   NUMBER — sits beside the icon, no separate accent color
+========================================================= */
+
+.timeline-number {
+  min-height: 0;
+
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: flex-start;
+
+  color: var(--ink);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+
+  transition: none;
+}
+
+.timeline-number span {
+  color: var(--ink);
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  margin-left: 2px;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   DOT — unused in the new card layout
+========================================================= */
+
+.timeline-dot {
+  display: none;
+}
+
+
+/* =========================================================
+   CONTENT — description only, wraps to its own line
+========================================================= */
+
+.timeline-content {
+  flex: 1 1 100%;
+
+  width: 100%;
+
+  margin-top: 14px;
+
+  padding: 0;
+}
+
+.timeline-index,
+.timeline-content h3 {
+  display: none;
+}
+
+.timeline-content p {
+  max-width: none;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.stats-bottom {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.5fr auto;
+
+  gap: 35px;
+
+  align-items: center;
+
+  margin-top: 70px;
+
+  padding-top: 27px;
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.stats-bottom-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--muted);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.stats-bottom-status span {
+  width: 7px;
+
+  height: 7px;
+
+  flex-shrink: 0;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(193, 96, 43, 0.08);
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+========================================================= */
+
+.stats-bottom p {
+  margin: 0;
+
+  font-size: 18px;
+
+  line-height: 1.45;
+}
+
+.stats-bottom p em {
+  color: var(--accent);
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.stats-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 7px;
+
+  color: var(--ink);
+
+  border-bottom: 1px solid var(--ink);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.stats-link strong {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 26px;
+
+  height: 26px;
+
+  color: #fff;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.stats-link:hover {
+  color: var(--accent);
+
+  border-color: var(--accent);
+}
+
+.stats-link:hover strong {
+  transform:
+    translate(3px, -3px);
+}
+
+/* =========================================================
+   MOBILE — 2 HORIZONTAL STATS PER ROW (card style)
+========================================================= */
+
+@media (max-width: 700px) {
+  .stats-section {
+    padding: 60px 0 50px;
+  }
+
+  .stats-inner {
+    width: calc(100% - 24px);
+  }
+
+  /* TOP */
+  .stats-top {
+    margin-bottom: 32px;
+  }
+
+  .stats-note {
+    display: none;
+  }
+
+  .stats-label {
+    gap: 8px;
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+
+  .stats-label span {
+    font-size: 9px;
+  }
+
+  .stats-label i {
+    width: 20px;
+  }
+
+  /* HEADER */
+  .stats-header {
+    display: block;
+    padding-bottom: 30px;
+  }
+
+  .stats-heading > span {
+    margin-bottom: 12px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .stats-heading h2 {
+    font-size: 42px;
+    line-height: 0.9;
+    letter-spacing: -2px;
+  }
+
+  .stats-intro {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .stats-intro p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+     STATS GRID — 2 PER ROW, icon+number card style
+  ===================================================== */
+
+  .stats-timeline {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+
+    margin-top: 25px;
+    padding-bottom: 0;
+  }
+
+  .timeline-item {
+    padding: 18px 16px;
+    column-gap: 12px;
+    border-radius: 18px;
+  }
+
+  /* ICON */
+  .timeline-item::before {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+    border-radius: 12px;
+  }
+
+  /* NUMBER */
+  .timeline-number,
+  .timeline-number span {
+    font-size: 24px;
+  }
+
+  /* CONTENT */
+  .timeline-content {
+    margin-top: 10px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* BOTTOM */
+  .stats-bottom {
+    display: block;
+
+    margin-top: 25px;
+    padding-top: 18px;
+  }
+
+  .stats-bottom-status {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+
+  .stats-bottom p {
+    margin: 10px 0 14px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .stats-link {
+    justify-self: start;
+
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .stats-link strong {
+    width: 23px;
+    height: 23px;
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .stats-section {
+    padding: 50px 0 42px;
+  }
+
+  .stats-inner {
+    width: calc(100% - 20px);
+  }
+
+  .stats-top {
+    margin-bottom: 28px;
+  }
+
+  .stats-heading h2 {
+    font-size: 38px;
+    letter-spacing: -1.8px;
+  }
+
+  .stats-intro {
+    margin-top: 17px;
+  }
+
+  .stats-intro p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  /* 2 cards */
+  .stats-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .timeline-item {
+    padding: 15px 13px;
+    column-gap: 10px;
+    border-radius: 16px;
+  }
+
+  .timeline-item::before {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .timeline-number,
+  .timeline-number span {
+    font-size: 20px;
+  }
+
+  .timeline-content {
+    margin-top: 8px;
+  }
+
+  .timeline-content p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .stats-bottom {
+    margin-top: 22px;
+  }
+
+  .stats-bottom p {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item,
+  .timeline-item::before,
+  .timeline-item::after,
+  .timeline-number,
+  .timeline-dot {
+    transition: none !important;
+  }
+}

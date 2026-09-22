@@ -1,0 +1,960 @@
+/* =========================================================
+   CALVIN'S TOOLS
+   HOW IT WORKS
+   COMPACT FOOD TRAILER EDITORIAL
+   (aligned with the Trailer Solutions / Featured Trailers /
+   Why Calvin's Tools design system)
+========================================================= */
+
+.how-it-works-section {
+  --cream: #f7f5ef;
+  --ink: #17160f;
+  --muted: #777267;
+  --soft: #aaa59a;
+  --line: #d9d3c7;
+  --accent: #c1602b;
+
+  --shadow-xs: 0 1px 2px rgba(23, 22, 15, 0.06);
+  --shadow-sm:
+    0 1px 2px rgba(23, 22, 15, 0.07),
+    0 6px 16px -8px rgba(23, 22, 15, 0.16);
+  --shadow-md:
+    0 2px 4px rgba(23, 22, 15, 0.06),
+    0 18px 34px -16px rgba(23, 22, 15, 0.22),
+    0 40px 70px -32px rgba(23, 22, 15, 0.2);
+  --shadow-lg:
+    0 3px 6px rgba(23, 22, 15, 0.07),
+    0 22px 40px -16px rgba(23, 22, 15, 0.26),
+    0 60px 100px -30px rgba(23, 22, 15, 0.26);
+  --shadow-accent:
+    0 10px 24px -10px rgba(193, 96, 43, 0.45),
+    0 2px 6px rgba(193, 96, 43, 0.3);
+
+  width: 100%;
+  padding: 100px 0 90px;
+
+  background: var(--cream);
+  color: var(--ink);
+
+  font-family: "Times New Roman", Times, serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.how-it-works-inner {
+  width: min(1120px, calc(100% - 42px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.how-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.how-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+
+.how-label span {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+
+.how-label i {
+  display: block;
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--line);
+}
+
+
+.how-top-note {
+  color: var(--soft);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   HEADING AREA
+========================================================= */
+
+.how-heading-area {
+  display: grid;
+
+  grid-template-columns: 1fr 0.75fr;
+
+  align-items: end;
+
+  gap: 70px;
+
+  padding: 40px 0 45px;
+}
+
+
+.how-eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+
+.how-heading-area h2 {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-size: clamp(46px, 5.3vw, 68px);
+
+  line-height: 0.92;
+
+  letter-spacing: -0.025em;
+
+  font-weight: 700;
+}
+
+
+.how-heading-area h2 em {
+  color: var(--accent);
+
+  font-style: normal;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.how-intro {
+  position: relative;
+
+  max-width: 370px;
+
+  padding-left: 17px;
+
+  border-left: 1px solid var(--accent);
+}
+
+
+.how-intro::before {
+  content: "";
+
+  position: absolute;
+
+  left: -3px;
+  top: -2px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+}
+
+
+.how-intro p {
+  margin: 0 0 18px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   EXPLORE LINK
+========================================================= */
+
+.how-explore {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  transition: color 0.3s ease;
+}
+
+
+.how-explore span {
+  display: grid;
+
+  place-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 50%;
+
+  font-size: 11px;
+
+  box-shadow: var(--shadow-xs);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.how-explore:hover {
+  color: var(--accent);
+}
+
+
+.how-explore:hover span {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #fff;
+
+  transform: translate(2px, -2px);
+
+  box-shadow: var(--shadow-accent);
+}
+
+
+/* =========================================================
+   STEPS WRAPPER
+========================================================= */
+
+.how-steps {
+  width: 100%;
+
+  padding-top: 24px;
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   TAB CIRCLES (click to switch step)
+========================================================= */
+
+.how-step-tabs {
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 32px;
+
+  margin-bottom: 40px;
+}
+
+
+.how-step-wave {
+  position: absolute;
+
+  left: 28px;
+  right: 28px;
+  top: 50%;
+
+  height: 40px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+.how-step-wave-track {
+  stroke: var(--line);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+
+.how-step-wave-fill {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+
+  filter: drop-shadow(0 2px 4px rgba(193, 96, 43, 0.35));
+
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+.how-step-tab {
+  position: relative;
+  z-index: 1;
+
+  overflow: visible;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  background: #fff;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-xs);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.how-step-tab::after {
+  content: attr(data-label);
+
+  position: absolute;
+
+  bottom: -24px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+
+  color: var(--soft);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+
+.how-step-tab:hover {
+  color: var(--accent);
+
+  border-color: var(--accent);
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+.how-step-tab:hover::after {
+  opacity: 1;
+}
+
+
+.how-step-tab.active {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #fff;
+
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-accent);
+}
+
+
+.how-step-tab.active::after {
+  color: var(--accent);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   AUTO-ROTATE PROGRESS RING (on the active circle)
+========================================================= */
+
+.how-step-tab-progress {
+  position: absolute;
+
+  inset: -5px;
+
+  border-radius: 50%;
+
+  border: 2px solid transparent;
+
+  border-top-color: #fff;
+
+  opacity: 0.85;
+
+  animation: how-tab-progress linear forwards;
+}
+
+
+@keyframes how-tab-progress {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ACTIVE STEP CARD
+========================================================= */
+
+.how-step-card {
+  display: grid;
+
+  grid-template-columns: 320px 1fr;
+
+  gap: 45px;
+
+  align-items: center;
+
+  padding: 34px;
+
+  background: #fff;
+
+  border: 1px solid var(--line);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow-lg);
+
+  animation: how-card-in 0.45s ease both;
+}
+
+
+@keyframes how-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.how-step-card-image {
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-md);
+}
+
+
+.how-step-card-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.5s ease;
+}
+
+
+.how-step-card:hover .how-step-card-image img {
+  transform: scale(1.04);
+}
+
+
+.how-step-card-content {
+  padding-right: 10px;
+}
+
+
+.how-step-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--soft);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+
+.how-step-card-content h3 {
+  margin: 0 0 14px;
+
+  color: var(--ink);
+
+  font-size: clamp(32px, 3.2vw, 42px);
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  font-weight: 700;
+}
+
+
+.how-step-card-content p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SMALL ACCENT LINE
+========================================================= */
+
+.how-line {
+  display: block;
+
+  width: 32px;
+  height: 1px;
+
+  margin-top: 16px;
+
+  background: var(--accent);
+
+  transition: width 0.3s ease;
+}
+
+
+.how-step-card:hover .how-line {
+  width: 55px;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.how-bottom {
+  display: grid;
+
+  grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding-top: 40px;
+
+  border-top: 1px solid var(--line);
+
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.how-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+
+.how-status span {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.how-bottom p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.how-cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 20px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  box-shadow: var(--shadow-accent);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.how-cta strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.how-cta:hover {
+  background: #a94f23;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 30px -8px rgba(193, 96, 43, 0.55);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 650px) {
+  .how-it-works-section {
+    padding: 65px 0 60px;
+  }
+
+  .how-it-works-inner {
+    width: calc(100% - 44px);
+  }
+
+  .how-top {
+    padding-bottom: 14px;
+  }
+
+  .how-label {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .how-label span {
+    font-size: 12px;
+  }
+
+  .how-label i {
+    width: 22px;
+  }
+
+  .how-top-note {
+    display: none;
+  }
+
+  .how-heading-area {
+    display: block;
+    padding: 30px 0;
+  }
+
+  .how-eyebrow {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .how-heading-area h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 0.95;
+  }
+
+  .how-intro {
+    margin-top: 22px;
+    padding-left: 14px;
+  }
+
+  .how-intro p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* =========================
+     TABS + CARD, MOBILE
+  ========================= */
+
+  .how-steps {
+    padding-top: 14px;
+  }
+
+  .how-step-tabs {
+    gap: 22px;
+    margin-bottom: 42px;
+  }
+
+  .how-step-wave {
+    left: 23px;
+    right: 23px;
+    height: 32px;
+  }
+
+  .how-step-wave-track,
+  .how-step-wave-fill {
+    stroke-width: 1.5;
+  }
+
+  .how-step-tab {
+    width: 46px;
+    height: 46px;
+    font-size: 12px;
+  }
+
+  .how-step-tab::after {
+    font-size: 9px;
+    bottom: -20px;
+  }
+
+  .how-step-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .how-step-card-image {
+    height: 170px;
+    border-radius: 12px;
+  }
+
+  .how-step-card-content {
+    padding-right: 0;
+  }
+
+  .how-step-label {
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .how-step-card-content h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+  }
+
+  .how-step-card-content p {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .how-line {
+    margin-top: 10px;
+  }
+
+  /* =========================
+     BOTTOM
+  ========================= */
+
+  .how-bottom {
+    display: block;
+    padding-top: 26px;
+  }
+
+  .how-status {
+    font-size: 10px;
+  }
+
+  .how-bottom p {
+    margin: 10px 0 14px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .how-cta {
+    width: 100%;
+    justify-content: space-between;
+
+    padding: 13px 18px;
+
+    font-size: 11px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .how-it-works-section {
+    padding: 55px 0 50px;
+  }
+
+  .how-it-works-inner {
+    width: calc(100% - 36px);
+  }
+
+  .how-heading-area {
+    padding: 26px 0;
+  }
+
+  .how-heading-area h2 {
+    font-size: 38px;
+  }
+
+  .how-intro {
+    margin-top: 20px;
+  }
+
+  .how-intro p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .how-step-tabs {
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .how-step-tab {
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+  }
+
+  .how-step-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .how-step-card-image {
+    height: 140px;
+    border-radius: 10px;
+  }
+
+  .how-step-card-content h3 {
+    font-size: 20px;
+  }
+
+  .how-step-card-content p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .how-step-label {
+    font-size: 9px;
+  }
+
+  .how-line {
+    margin-top: 7px;
+  }
+}
