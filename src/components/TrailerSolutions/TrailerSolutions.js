@@ -10,39 +10,39 @@ const solutions = {
     title: "Turn your idea",
     highlight: "into a mobile business.",
     description:
-      "Professional food trailers designed for kitchens, catering, events, pop-ups and businesses that want the freedom to serve customers anywhere.",
+      "Professional food trailers designed for kitchens, catering, events, pop-ups and businesses ready to serve customers anywhere.",
     image: "/assets/food_trailer.png",
     tag: "MOBILE KITCHEN",
     link: "/trailers-for-sale",
     cta: "Explore Food Trailers",
   },
 
-  beauty: {
+  specialty: {
     number: "02",
-    category: "NAIL SALON TRAILERS",
-    short: "BEAUTY",
-    title: "Your salon.",
-    highlight: "Wherever business takes you.",
+    category: "SPECIALTY TRAILERS",
+    short: "SPECIALTY",
+    title: "Build beyond",
+    highlight: "the traditional business.",
     description:
-      "Create a premium mobile beauty experience with a trailer designed for nail salons, beauty services and independent professionals.",
+      "Purpose-built trailers for refrigeration, beauty services, mobile retail, hospitality and specialized commercial businesses.",
     image: "/assets/nail_trailer.png",
-    tag: "MOBILE BEAUTY",
-    link: "/trailers-for-sale/nail-salon-trailers",
-    cta: "Explore Nail Salon Trailers",
+    tag: "SPECIALTY BUSINESS",
+    link: "/trailers-for-sale",
+    cta: "Explore Specialty Trailers",
   },
 
-  retail: {
+  custom: {
     number: "03",
-    category: "RETAIL TRAILERS",
-    short: "RETAIL",
-    title: "Take your store",
-    highlight: "beyond four walls.",
+    category: "CUSTOM TRAILERS",
+    short: "CUSTOM",
+    title: "Designed around",
+    highlight: "the way you work.",
     description:
-      "Flexible retail trailers for pop-ups, merchandise, exhibitions, events and businesses ready to meet customers wherever they are.",
+      "Create a trailer around your exact business requirements with custom layouts, equipment, finishes, branding and floor plans.",
     image: "/assets/retail_trailer.png",
-    tag: "MOBILE RETAIL",
-    link: "/trailers-for-sale/mobile-retail-trailers",
-    cta: "Explore Retail Trailers",
+    tag: "CUSTOM BUILD",
+    link: "/custom-trailers",
+    cta: "Build Your Trailer",
   },
 };
 
@@ -98,7 +98,7 @@ function TrailerSolutions() {
 
         return solutionKeys[(index + 1) % solutionKeys.length];
       });
-    }, 5000);
+    }, 2500);
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -158,7 +158,7 @@ function TrailerSolutions() {
           <div className="selector-heading">
             OUR
             <br />
-            SPACES
+            TRAILERS
           </div>
 
           <div
@@ -214,6 +214,7 @@ function TrailerSolutions() {
           }`}
           role="tabpanel"
         >
+
           {/* INDEX */}
           <div className="product-index">
             <span>CALVIN'S</span>
@@ -243,7 +244,10 @@ function TrailerSolutions() {
                 className="product-image-corner"
                 aria-hidden="true"
               >
-                <ArrowUpRight size={18} strokeWidth={1.8} />
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.8}
+                />
               </div>
             </div>
 
@@ -290,20 +294,20 @@ function TrailerSolutions() {
           </div>
         </div>
 
-        {/* BOTTOM INFO */}
+        {/* BOTTOM */}
         <div className="solutions-bottom">
           <div className="solutions-progress">
             {solutionKeys.map((key) => (
               <span
                 key={key}
                 className={
-                  active === key ? "progress-dot active" : "progress-dot"
+                  active === key
+                    ? "progress-dot active"
+                    : "progress-dot"
                 }
               />
             ))}
           </div>
-
-          
         </div>
 
       </div>

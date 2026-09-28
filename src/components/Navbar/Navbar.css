@@ -80,6 +80,14 @@ html {
 }
 
 /* =====================================================
+   MOBILE CENTER TITLE — hidden on desktop
+===================================================== */
+
+.mobile-brand-title {
+  display: none;
+}
+
+/* =====================================================
    NAVIGATION
 ===================================================== */
 
@@ -122,7 +130,7 @@ html {
   width: 0;
   height: 1px;
 
-  background: #8b5cf6;
+  background: #111111;
 
   transition: width 0.25s ease;
 }
@@ -146,7 +154,8 @@ html {
 
   padding: 0 22px;
 
-  background: #8b5cf6;
+  /* BLACK BUTTON */
+  background: #111111;
   color: #ffffff;
 
   text-decoration: none;
@@ -165,11 +174,12 @@ html {
 }
 
 .nav-cta:hover {
-  background: #7c3aed;
+  /* DARK GRAY HOVER */
+  background: #000000;
 
   transform: translateY(-1px);
 
-  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .nav-cta-arrow {
@@ -289,6 +299,18 @@ html {
     height: 35px;
   }
 
+  /* Mobile center title */
+
+  .mobile-brand-title {
+    display: block;
+
+    color: #1a202c;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
   /* Hide desktop CTA */
 
   .nav-cta {
@@ -359,7 +381,7 @@ html {
   }
 
   .nav-links a:hover {
-    color: #7c3aed;
+    color: #111111;
   }
 }
 
@@ -380,6 +402,10 @@ html {
 
   .brand-logo {
     height: 33px;
+  }
+
+  .mobile-brand-title {
+    font-size: 14px;
   }
 
   .nav-links {

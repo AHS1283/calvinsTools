@@ -33,7 +33,7 @@
   width: 100%;
   padding: 100px 0 90px;
 
-  background: #ffffff;
+  background: #f7f5ef;;
 
   color: var(--ink);
   font-family: "Times New Roman", Times, serif;
@@ -372,6 +372,9 @@
 /* =====================================================
    MOBILE
 ===================================================== */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 700px) {
   .reviews-section {
@@ -390,9 +393,95 @@
     font-size: 14px;
   }
 
+  /* ================================================
+     RATING CARD - MOBILE CENTER
+  ================================================ */
+
   .rating-card {
-    padding: 26px 22px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 28px 20px;
+    margin-bottom: 40px;
+
+    gap: 24px;
+    text-align: center;
   }
+
+  .rating-card-left {
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    gap: 9px;
+  }
+
+  /* 5.0 */
+
+  .rating-card-left > strong {
+    display: block;
+
+    width: 100%;
+
+    font-size: 52px;
+    line-height: 1;
+
+    text-align: center;
+  }
+
+  /* Stars */
+
+  .rating-card-left .review-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 6px;
+
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* Based on 120+ reviews */
+
+  .rating-card-left > span {
+    display: block;
+
+    width: 100%;
+
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* Buttons */
+
+  .rating-card-actions {
+    width: 100%;
+    max-width: 100%;
+
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .view-reviews-btn,
+  .write-review-btn {
+    width: 100%;
+    min-height: 48px;
+
+    box-sizing: border-box;
+
+    font-size: 12px;
+  }
+
+  /* Carousel arrows */
 
   .carousel-btn-prev {
     left: -6px;

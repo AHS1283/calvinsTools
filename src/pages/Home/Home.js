@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Home/Hero/Hero";
 import About from "../../components/Home/About/About";
-import TrailerSolutions from "../../components/TrailerSolutions/TrailerSolutions";
-import FeaturedTrailers from "../../components/FeaturedTrailers/FeaturedTrailers";
+
+
 import WhyCalvinsTools from "../../components/WhyCalvinsTools/WhyCalvinsTools";
 import HowItWorks from "../../components/HowItWorks/HowItWorks";
 import Reviews from "../../components/Reviews/Reviews";
 import Stats from "../../components/Stats/Stats";
-import SocialSidebar from "../../components/SocialSidebar/SocialSidebar";
-import Footer from "../../components/Footer/Footer";
+import TrailerSize from "../../components/TrailerSize/TrailerSize";
+
+import TrailerShowcase from "../../components/TrailerShowcase/TrailerShowcase";
+import TrailerRentShowcase from "../../components/TrailerRentShowcase/TrailerRentShowcase";
 
 import "./Home.css";
 
@@ -20,8 +21,11 @@ function Home() {
       window.history.scrollRestoration = "manual";
     }
 
-    // Always start Home at the top.
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
 
     return () => {
       if ("scrollRestoration" in window.history) {
@@ -32,58 +36,106 @@ function Home() {
 
   return (
     <div className="home-page">
-      <Navbar />
-
       <main>
-        {/* HOME */}
-        <section id="home" className="home-section">
+
+        {/* =================================================
+            HERO
+        ================================================= */}
+        <section
+          id="home"
+          className="home-section"
+        >
           <Hero />
         </section>
 
-        {/* ABOUT */}
-        <section id="about" className="home-section">
+        {/* =================================================
+            ABOUT
+        ================================================= */}
+        <section
+          id="about"
+          className="home-section"
+        >
           <About />
         </section>
 
-        {/* STATS */}
+
+
+        {/* =================================================
+            TRAILER SOLUTIONS
+        ================================================= */}
+        <section
+          id="trailers"
+          className="home-section"
+        >
+          <TrailerShowcase />
+        </section>
+        {/* =================================================
+            STATS
+        ================================================= */}
         <section className="home-section">
           <Stats />
         </section>
 
-        {/* TRAILER SOLUTIONS */}
-        <section id="trailers" className="home-section">
-          <TrailerSolutions />
+        {/* =================================================
+            TRAILERS FOR RENT
+        ================================================= */}
+        <section
+          id="trailers-for-rent"
+          className="home-section"
+        >
+          <TrailerRentShowcase />
         </section>
 
-        {/* FEATURED TRAILERS */}
-        <section id="featured-trailers" className="home-section">
-          <FeaturedTrailers />
-        </section>
 
-        {/* WHY CALVIN'S TOOLS */}
-        <section id="why-calvins" className="home-section">
+
+
+        {/* =================================================
+            WHY CALVIN'S TOOLS
+        ================================================= */}
+        <section
+          id="why-calvins"
+          className="home-section"
+        >
           <WhyCalvinsTools />
         </section>
 
-        {/* HOW IT WORKS */}
-        <section id="how-it-works" className="home-section">
+        {/* =================================================
+            HOW IT WORKS
+        ================================================= */}
+        <section
+          id="how-it-works"
+          className="home-section"
+        >
           <HowItWorks />
         </section>
 
-        {/* SOCIAL */}
-        <SocialSidebar />
+        <section
+          id="trailer-sizes"
+          className="home-section"
+        >
+          <TrailerSize />
+        </section>
 
-        {/* REVIEWS */}
-        <section id="reviews" className="home-section">
+
+        {/* =================================================
+            REVIEWS
+        ================================================= */}
+        <section
+          id="reviews"
+          className="home-section"
+        >
           <Reviews />
         </section>
 
-        {/* CONTACT */}
-        <section id="contact" className="home-section" />
+        {/* =================================================
+            CONTACT
+        ================================================= */}
+        <section
+          id="contact"
+          className="home-section"
+        />
 
       </main>
-
-      <Footer />
     </div>
   );
 }

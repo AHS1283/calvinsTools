@@ -82,19 +82,19 @@ const linkColumns = [
 
 const socials = [
   {
-    label: "Instagram",
+    
     href: "https://www.instagram.com/",
     icon: <FaInstagram />,
   },
 
   {
-    label: "LinkedIn",
+    
     href: "https://www.linkedin.com/",
     icon: <FaLinkedinIn />,
   },
 
   {
-    label: "YouTube",
+    
     href: "https://www.youtube.com/",
     icon: <FaYoutube />,
   },

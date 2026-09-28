@@ -88,7 +88,7 @@ function WhyCalvinsTools() {
         {/* TOP */}
         <div className="why-calvins-top">
           <div className="why-calvins-label">
-            <span>02</span>
+            <span>06</span>
             <i></i>
             WHY CALVIN'S TOOLS
           </div>

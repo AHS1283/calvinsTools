@@ -1,5 +1,5 @@
 /* =========================================================
-   CALVIN'S TOOLS - HERO (UPDATED FOR FLOATING NAVBAR)
+   CALVIN'S TOOLS - HERO
 ========================================================= */
 
 .rento-hero {
@@ -13,15 +13,10 @@
 
   width: 100%;
   min-height: 100vh;
-
-  /* Padding added at the top so content sits cleanly below floating navbar */
   padding-top: 100px;
-
   background: var(--bg);
   color: var(--ink);
-
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -33,30 +28,26 @@
 .rento-hero-container {
   width: min(1380px, calc(100% - 80px));
   min-height: calc(100vh - 100px);
-
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
 }
 
 /* =========================================================
-   TRAILER TYPE SWITCHER (rounded shadow container)
+   MAIN TYPE SWITCHER
 ========================================================= */
 
 .rento-type-switcher {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   width: fit-content;
-  margin-bottom: 28px;
+  margin: 0 auto 28px;
   padding: 10px;
-
   background: var(--white);
   border-radius: 26px;
   box-shadow:
-    0 14px 40px rgba(23, 22, 15, 0.10),
+    0 14px 40px rgba(23, 22, 15, 0.1),
     0 2px 8px rgba(23, 22, 15, 0.04);
 }
 
@@ -65,20 +56,20 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
-  padding: 16px 30px;
+  min-height: 56px;
+  padding: 14px 26px;
   border: 0;
   border-radius: 18px;
   background: transparent;
-
   color: var(--soft);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.4px;
-
   cursor: pointer;
   overflow: hidden;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .rento-type-btn:hover {
@@ -97,6 +88,7 @@
 
 .type-title {
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .type-progress {
@@ -109,34 +101,15 @@
   animation: rento-nav-progress linear forwards;
 }
 
-@media (max-width: 700px) {
-  .rento-type-switcher {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .rento-type-btn {
-    flex: 1;
-    justify-content: center;
-    padding: 14px 10px;
-  }
-
-  .type-number {
-    display: none;
-  }
-}
-
 /* =========================================================
-   SUB HEADER (TRAILER CATEGORY & COUNTER BELOW NAVBAR)
+   SUB HEADER
 ========================================================= */
 
 .rento-hero-subheader {
   height: 50px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   border-bottom: 1px solid var(--line);
   margin-top: 10px;
 }
@@ -166,22 +139,16 @@
 
 .rento-showcase {
   flex: 1;
-
   min-height: 520px;
-
   display: grid;
-
-  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
-
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.55fr);
   align-items: center;
-
-  gap: 80px;
-
+  gap: 70px;
   padding: 30px 0 40px;
 }
 
 /* =========================================================
-   IMAGE & FRAME
+   IMAGE
 ========================================================= */
 
 .rento-image-wrapper {
@@ -190,8 +157,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
 .rento-image-wrapper.is-changing {
@@ -204,14 +172,11 @@
   width: min(100%, 830px);
   height: 480px;
   overflow: hidden;
-
   background: #ebe7dd;
   border-radius: 28px;
-
   box-shadow:
     0 40px 80px -30px rgba(23, 22, 15, 0.28),
     0 8px 22px rgba(23, 22, 15, 0.08);
-
   transition: box-shadow 0.3s ease;
 }
 
@@ -227,7 +192,6 @@
   display: block;
   object-fit: cover;
   object-position: center;
-
   transition: transform 0.8s cubic-bezier(0.2, 0.65, 0.25, 1);
 }
 
@@ -239,12 +203,10 @@
   position: absolute;
   bottom: -22px;
   left: 25px;
-
   font-size: 76px;
   line-height: 1;
   color: var(--ink);
   font-weight: 700;
-
   pointer-events: none;
   text-shadow: 0 6px 18px rgba(23, 22, 15, 0.12);
 }
@@ -256,7 +218,7 @@
 .rento-content {
   align-self: center;
   width: 100%;
-  max-width: 390px;
+  max-width: 410px;
 }
 
 .rento-category {
@@ -276,39 +238,49 @@
 }
 
 .rento-content p {
-  max-width: 340px;
+  max-width: 390px;
   margin: 20px 0 0;
   color: var(--muted);
   font-size: 15px;
   line-height: 1.6;
 }
 
-.rento-content-bottom {
-  margin-top: 35px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 /* =========================================================
-   TAGS & BUTTON
+   RELATED CATEGORY TAGS
 ========================================================= */
+
+.rento-content-bottom {
+  margin-top: 30px;
+}
 
 .rento-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.rento-tags::-webkit-scrollbar {
+  width: 3px;
+}
+
+.rento-tags::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 10px;
 }
 
 .rento-tags span {
-  padding: 8px 14px;
+  padding: 7px 11px;
   border: 1px solid var(--line);
   border-radius: 30px;
   background: var(--white);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--muted);
-  box-shadow: 0 4px 10px rgba(23, 22, 15, 0.05);
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(23, 22, 15, 0.04);
   transition: all 0.25s ease;
 }
 
@@ -319,42 +291,52 @@
   transform: translateY(-2px);
 }
 
+/* =========================================================
+   EXPLORE BUTTON (rounded/pill)
+========================================================= */
+
 .rento-explore-btn {
-  width: fit-content;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
+  gap: 8px;
+  margin-top: 26px;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 50px;
+  background: var(--ink);
+  color: var(--white);
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(23, 22, 15, 0.18);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .rento-explore-btn span {
-  position: relative;
+  white-space: nowrap;
 }
 
-.rento-explore-btn span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  background: var(--ink);
-  transition: transform 0.3s ease;
+.rento-explore-btn svg {
+  transition: transform 0.25s ease;
 }
 
-.rento-explore-btn:hover span::after {
-  transform: scaleX(0.4);
+.rento-explore-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(193, 96, 43, 0.28);
+}
+
+.rento-explore-btn:hover svg {
+  transform: translate(2px, -2px);
 }
 
 /* =========================================================
-   BOTTOM CONTROLS
+   BOTTOM
 ========================================================= */
 
 .rento-bottom {
@@ -365,39 +347,27 @@
   justify-content: flex-end;
 }
 
-@keyframes rento-nav-progress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
 .rento-controls {
   display: flex;
   gap: 8px;
 }
 
-.rento-controls button {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
+/* =========================================================
+   PROGRESS
+========================================================= */
 
-.rento-controls button:hover {
-  background: var(--ink);
-  color: var(--white);
-  border-color: var(--ink);
-  transform: translateY(-2px);
+@keyframes rento-nav-progress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   TABLET
 ========================================================= */
 
 @media (max-width: 1050px) {
@@ -417,7 +387,24 @@
   .rento-image-frame {
     height: 380px;
   }
+
+  .rento-content {
+    max-width: 700px;
+  }
+
+  .rento-content p {
+    max-width: 650px;
+  }
+
+  .rento-tags {
+    max-height: none;
+    overflow: visible;
+  }
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
   .rento-hero {
@@ -428,15 +415,105 @@
     width: calc(100% - 32px);
   }
 
+  .rento-type-switcher {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 7px;
+    border-radius: 20px;
+  }
+
+  .rento-type-btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 46px;
+    padding: 13px 5px;
+    border-radius: 15px;
+  }
+
+  .type-number {
+    display: none;
+  }
+
+  .type-title {
+    font-size: 9px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .rento-hero-subheader {
+    margin-top: 6px;
+  }
+
+  .rento-subheader-label {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .rento-counter {
+    font-size: 12px;
+  }
+
   .rento-showcase {
+    min-height: auto;
     padding: 20px 0 30px;
+    gap: 35px;
   }
 
   .rento-image-frame {
     height: 280px;
+    border-radius: 20px;
+  }
+
+  .rento-image-number {
+    bottom: -15px;
+    left: 15px;
+    font-size: 55px;
+  }
+
+  .rento-content {
+    max-width: 100%;
+  }
+
+  .rento-category {
+    margin-bottom: 14px;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+  }
+
+  .rento-content h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  .rento-content p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .rento-content-bottom {
+    margin-top: 24px;
+  }
+
+  .rento-tags {
+    gap: 6px;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  .rento-tags span {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .rento-explore-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
   }
 
   .rento-bottom {
-    justify-content: center;
+    min-height: 50px;
   }
 }

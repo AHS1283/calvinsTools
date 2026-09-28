@@ -11,9 +11,40 @@ function Navbar() {
       window.history.scrollRestoration = "manual";
     }
 
+    const hash = window.location.hash
+      ? window.location.hash.replace("#", "")
+      : "";
+
+    // Agar hash ke through kisi section pe aaye ho, seedha wahan scroll karo
+    if (window.location.pathname === "/" && hash) {
+      const scrollToHashTarget = () => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return true;
+        }
+        return false;
+      };
+
+      let attempts = 0;
+      const maxAttempts = 20;
+      const interval = setInterval(() => {
+        attempts += 1;
+        if (scrollToHashTarget() || attempts >= maxAttempts) {
+          clearInterval(interval);
+        }
+      }, 100);
+
+      return () => {
+        clearInterval(interval);
+        if ("scrollRestoration" in window.history) {
+          window.history.scrollRestoration = "auto";
+        }
+      };
+    }
+
     const resetToHero = () => {
-      // Only reset scroll when we are on Home
-      if (window.location.pathname === "/") {
+      if (window.location.pathname === "/" && !window.location.hash) {
         window.scrollTo({
           top: 0,
           left: 0,
@@ -47,14 +78,10 @@ function Navbar() {
     setOpen((prev) => !prev);
   };
 
-  /*
-   * HOME SECTION NAVIGATION
-   */
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     closeMenu();
 
-    // HOME / HERO
     if (targetId === "home") {
       if (window.location.pathname !== "/") {
         window.location.href = "/";
@@ -70,7 +97,12 @@ function Navbar() {
       return;
     }
 
-    // Other sections
+    // Kisi aur page se ho to seedha home ke uss section pe hash ke sath jao
+    if (window.location.pathname !== "/") {
+      window.location.href = `/#${targetId}`;
+      return;
+    }
+
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
@@ -81,10 +113,6 @@ function Navbar() {
     }
   };
 
-  /*
-   * TRAILERS FOR SALE
-   * Opens separate page instead of Home #trailers section.
-   */
   const handleTrailersForSale = (e) => {
     e.preventDefault();
     closeMenu();
@@ -92,9 +120,13 @@ function Navbar() {
     window.location.href = "/trailers-for-sale";
   };
 
-  /*
-   * BOOKING
-   */
+  const handleTrailersForRent = (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    window.location.href = "/trailerrental";
+  };
+
   const openBooking = (e) => {
     e.preventDefault();
 
@@ -110,7 +142,9 @@ function Navbar() {
     <header className="navbar-wrapper">
       <div className="navbar">
 
-        {/* LOGO */}
+        {/* =========================
+            LOGO
+        ========================== */}
         <a
           className="brand"
           href="/"
@@ -124,12 +158,20 @@ function Navbar() {
           />
         </a>
 
-        {/* NAVIGATION */}
+        {/* =========================
+            MOBILE CENTER TITLE
+        ========================== */}
+        <div className="mobile-brand-title">
+          CALVINSTOOLS
+        </div>
+
+        {/* =========================
+            NAVIGATION
+        ========================== */}
         <nav
           className={`nav-links ${open ? "open" : ""}`}
           aria-label="Main navigation"
         >
-          {/* HOME */}
           <a
             href="/"
             onClick={(e) => handleNavClick(e, "home")}
@@ -137,15 +179,13 @@ function Navbar() {
             Home
           </a>
 
-          {/* ABOUT */}
           <a
-            href="#about"
+            href="/#about"
             onClick={(e) => handleNavClick(e, "about")}
           >
             About
           </a>
 
-          {/* TRAILERS FOR SALE */}
           <a
             href="/trailers-for-sale"
             onClick={handleTrailersForSale}
@@ -153,19 +193,15 @@ function Navbar() {
             Trailers for Sale
           </a>
 
-          {/* FEATURED */}
           <a
-            href="#featured-trailers"
-            onClick={(e) =>
-              handleNavClick(e, "featured-trailers")
-            }
+            href="/trailerrental"
+            onClick={handleTrailersForRent}
           >
-            Featured
+            Trailers for Rent
           </a>
 
-          {/* WHY CALVIN'S */}
           <a
-            href="#why-calvins"
+            href="/#why-calvins"
             onClick={(e) =>
               handleNavClick(e, "why-calvins")
             }
@@ -173,9 +209,8 @@ function Navbar() {
             Why Calvin's
           </a>
 
-          {/* HOW IT WORKS */}
           <a
-            href="#how-it-works"
+            href="/#how-it-works"
             onClick={(e) =>
               handleNavClick(e, "how-it-works")
             }
@@ -183,34 +218,36 @@ function Navbar() {
             How It Works
           </a>
 
-          {/* REVIEWS */}
           <a
-            href="#reviews"
+            href="/#reviews"
             onClick={(e) => handleNavClick(e, "reviews")}
           >
             Reviews
           </a>
 
-          {/* CONTACT */}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={(e) => handleNavClick(e, "contact")}
           >
             Contact
           </a>
         </nav>
 
-        {/* BOOKING CTA */}
+        {/* =========================
+            BOOKING CTA
+        ========================== */}
         <a
           className="nav-cta"
-          href="#contact"
+          href="/#contact"
           onClick={openBooking}
         >
           <span>Book a Trailer</span>
           <span className="nav-cta-arrow">↗</span>
         </a>
 
-        {/* MOBILE MENU */}
+        {/* =========================
+            MOBILE MENU
+        ========================== */}
         <button
           type="button"
           className={`menu-toggle ${open ? "active" : ""}`}
@@ -223,7 +260,9 @@ function Navbar() {
         </button>
       </div>
 
-      {/* BOOKING MODAL */}
+      {/* =========================
+          BOOKING MODAL
+      ========================== */}
       <BookingModal
         isOpen={showBooking}
         onClose={closeBooking}

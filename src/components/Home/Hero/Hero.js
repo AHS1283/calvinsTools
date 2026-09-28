@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import {
- 
-} from "lucide-react";
+
+import React, { useEffect, useRef, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 const AUTO_ROTATE_MS = 5000;
@@ -10,38 +10,67 @@ const trailers = [
   {
     id: "food",
     number: "01",
-    type: "FOOD",
-    title: "Food Trailer",
-    eyebrow: "MOBILE BUSINESS",
+    type: "FOOD TRAILERS",
+    title: "Food Trailers",
+    eyebrow: "FOOD TRAILERS",
     description:
-      "A professional mobile kitchen built for food businesses, catering and events.",
+      "Professional food trailers designed for different menus, kitchens, catering operations, events, and growing food businesses.",
     image: "/assets/food_image.png",
-    tags: ["Food", "Events", "Catering"],
-    route: "/trailers/rent?category=food",
+    tags: [
+      "Custom Food",
+      "Mobile Kitchen",
+      "BBQ Food",
+      "Pizza",
+      "Coffee",
+      "Dessert",
+      "Ice Cream",
+      "Donut",
+      "Taco",
+      "Smoker",
+      "Small Food",
+      "Mini Food",
+    ],
+    route: "/trailers-for-sale",
+    buttonText: "Explore Food Trailers",
   },
+
   {
-    id: "beauty",
+    id: "specialty",
     number: "02",
-    type: "Speciality Trailer",
-    title: "Nail Salon Trailer",
-    eyebrow: "MOBILE STUDIO",
+    type: "SPECIALTY TRAILERS",
+    title: "Specialty Trailers",
+    eyebrow: "SPECIALTY TRAILERS",
     description:
-      "A refined mobile beauty studio for nail services, appointments and events.",
+      "Purpose-built specialty trailers for refrigeration, beauty services, mobile retail, hospitality, and specialized commercial needs.",
     image: "/assets/nail_image.png",
-    tags: ["Beauty", "Nails", "Studio"],
-    route: "/trailers/rent?category=beauty",
+    tags: [
+      "Refrigerated",
+      "Nail Salon",
+      "Mobile Retail",
+      "Mobile Bar",
+      "Custom Commercial",
+    ],
+    route: "/trailers-for-sale",
+    buttonText: "Explore Specialty Trailers",
   },
+
   {
-    id: "retail",
+    id: "custom",
     number: "03",
-    type: "RETAIL",
-    title: "Retail Trailer",
-    eyebrow: "MOBILE STORE",
+    type: "CUSTOM TRAILERS",
+    title: "Custom Trailers",
+    eyebrow: "CUSTOM TRAILERS",
     description:
-      "A flexible mobile retail space made for pop-ups, exhibitions and events.",
+      "Build a trailer around your business with custom layouts, equipment, finishes, branding, and floor plans designed for your exact requirements.",
     image: "/assets/retail_image.png",
-    tags: ["Retail", "Pop-Up", "Events"],
-    route: "/trailers/rent?category=retail",
+    tags: [
+      "Custom Food Trailers",
+      "Custom Commercial Trailers",
+      "Build Your Trailer",
+      "Floor Plans & Layouts",
+    ],
+    route: "/custom-trailers",
+    buttonText: "Explore Custom Trailers",
   },
 ];
 
@@ -83,42 +112,12 @@ export default function Hero() {
 
   /*
    * =========================================================
-   * NEXT TRAILER
-   * =========================================================
-   */
-  // const nextTrailer = () => {
-  //   const nextIndex =
-  //     (activeIndex + 1) % trailers.length;
-
-  //   changeTrailer(nextIndex);
-  // };
-
-  /*
-   * =========================================================
-   * PREVIOUS TRAILER
-   * =========================================================
-   */
-  // const previousTrailer = () => {
-  //   const previousIndex =
-  //     (activeIndex - 1 + trailers.length) %
-  //     trailers.length;
-
-  //   changeTrailer(previousIndex);
-  // };
-
-  /*
-   * =========================================================
    * AUTO ROTATION
-   *
-   * This only changes the Hero trailer.
-   * It does NOT scroll the page.
    * =========================================================
    */
   useEffect(() => {
     timerRef.current = setInterval(() => {
-      setActiveIndex((prev) => {
-        return (prev + 1) % trailers.length;
-      });
+      setActiveIndex((prev) => (prev + 1) % trailers.length);
     }, AUTO_ROTATE_MS);
 
     return () => {
@@ -130,7 +129,7 @@ export default function Hero() {
 
   /*
    * =========================================================
-   * CLEANUP CHANGE TIMEOUT
+   * CLEANUP
    * =========================================================
    */
   useEffect(() => {
@@ -142,15 +141,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-      className="rento-hero"
-      id="home"
-    >
+    <section className="rento-hero" id="home">
       <div className="rento-hero-container">
 
         {/* ===================================================
-            TRAILER TYPE SWITCHER (rounded shadow container)
-            =================================================== */}
+            MAIN TRAILER TYPE SWITCHER
+        =================================================== */}
         <div className="rento-type-switcher">
           {trailers.map((trailer, index) => (
             <button
@@ -176,8 +172,7 @@ export default function Hero() {
                   className="type-progress"
                   key={activeIndex}
                   style={{
-                    animationDuration:
-                      `${AUTO_ROTATE_MS}ms`,
+                    animationDuration: `${AUTO_ROTATE_MS}ms`,
                   }}
                 />
               )}
@@ -185,33 +180,14 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* ===================================================
-            SUB HEADER / TRAILER COUNTER
-            =================================================== */}
-        <div className="rento-hero-subheader">
-          <span className="rento-subheader-label">
-            FEATURED TRAILERS
-          </span>
-
-          <div className="rento-counter">
-            <span>
-              {activeTrailer.number}
-            </span>
-
-            <i>/</i>
-
-            <span>03</span>
-          </div>
-        </div>
+        
 
         {/* ===================================================
             MAIN SHOWCASE
-            =================================================== */}
+        =================================================== */}
         <div className="rento-showcase">
 
-          {/* =================================================
-              IMAGE
-              ================================================= */}
+          {/* IMAGE */}
           <div
             className={`rento-image-wrapper ${
               isChanging ? "is-changing" : ""
@@ -230,80 +206,48 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* =================================================
-              CONTENT
-              ================================================= */}
+          {/* CONTENT */}
           <div className="rento-content">
 
             <div className="rento-category">
               {activeTrailer.eyebrow}
             </div>
 
-            <h1>
-              {activeTrailer.title}
-            </h1>
+            <h1>{activeTrailer.title}</h1>
 
-            <p>
-              {activeTrailer.description}
-            </p>
+            <p>{activeTrailer.description}</p>
 
+            {/* RELATED CATEGORIES */}
             <div className="rento-content-bottom">
 
-              {/* TAGS */}
               <div className="rento-tags">
                 {activeTrailer.tags.map((tag) => (
-                  <span key={tag}>
-                    {tag}
-                  </span>
+                  <span key={tag}>{tag}</span>
                 ))}
               </div>
 
-              {/* EXPLORE */}
-              {/* <a
-                href={activeTrailer.route}
+              {/* EXPLORE BUTTON */}
+              <Link
+                to={activeTrailer.route}
                 className="rento-explore-btn"
               >
-                <span>Explore</span>
+                <span>{activeTrailer.buttonText}</span>
 
                 <ArrowUpRight
                   size={17}
-                  strokeWidth={1.5}
+                  strokeWidth={1.6}
                 />
-              </a> */}
+              </Link>
 
             </div>
           </div>
         </div>
 
         {/* ===================================================
-            BOTTOM CONTROLS
-            =================================================== */}
+            BOTTOM
+        =================================================== */}
         <div className="rento-bottom">
-          <div className="rento-controls">
-
-            {/* <button
-              onClick={previousTrailer}
-              aria-label="Previous trailer"
-              type="button"
-            >
-              <ChevronLeft
-                size={19}
-                strokeWidth={1.4}
-              />
-            </button> */}
-{/* 
-            <button
-              onClick={nextTrailer}
-              aria-label="Next trailer"
-              type="button"
-            >
-              <ChevronRight
-                size={19}
-                strokeWidth={1.4}
-              />
-            </button> */}
-
-          </div>
+          <div className="rento-controls" />
         </div>
 
       </div>

@@ -113,7 +113,7 @@ function Stats() {
         {/* TOP LABEL */}
         <div className="stats-top">
           <div className="stats-label">
-            <span>03</span>
+            <span>04</span>
             <i></i>
             CALVIN'S TOOLS / AT A GLANCE
           </div>

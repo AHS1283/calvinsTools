@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SocialSidebar.css";
 
 const SOCIAL_LINKS = [
@@ -12,18 +13,31 @@ const SOCIAL_LINKS = [
       </svg>
     ),
   },
+
   {
     name: "Instagram",
     url: "https://instagram.com/rentocar",
     className: "instagram",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      >
         <rect x="3" y="3" width="18" height="18" rx="5" />
         <circle cx="12" cy="12" r="4" />
-        <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none" />
+        <circle
+          cx="17.4"
+          cy="6.7"
+          r="1"
+          fill="currentColor"
+          stroke="none"
+        />
       </svg>
     ),
   },
+
   {
     name: "Facebook",
     url: "https://facebook.com/rentocar",
@@ -44,8 +58,8 @@ const SocialSidebar = () => {
           EXPLORE ALL TRAILERS CTA
       ================================================= */}
 
-      <a
-        href="#trailers"
+      <Link
+        to="/trailers-for-sale#food-trailers"
         className="social-sidebar-cta"
         aria-label="Explore All Trailers"
         title="Explore All Trailers"
@@ -57,7 +71,7 @@ const SocialSidebar = () => {
         <span className="social-sidebar-cta-icon">
           ↗
         </span>
-      </a>
+      </Link>
 
       {/* =================================================
           SOCIAL ICONS

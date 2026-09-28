@@ -1,0 +1,1888 @@
+/* =====================================================
+   CALVIN'S TOOLS
+   TRAILERS FOR RENT — styled to match Trailers for Sale
+===================================================== */
+
+.trailers-rent-page {
+  --bg: #f7f5ef;
+  --white: #ffffff;
+  --ink: #17160f;
+  --muted: #777267;
+  --soft: #a8a398;
+  --line: #ded9ce;
+  --accent: #c1602b;
+  --accent-dark: #8f4620;
+  --accent-soft: #f6ece2;
+  --accent-soft-border: #ecdac8;
+
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: var(--white);
+  color: var(--ink);
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.trailers-rent-page *,
+.trailers-rent-page *::before,
+.trailers-rent-page *::after {
+  box-sizing: border-box;
+}
+
+.trailers-rent-page button,
+.trailers-rent-page input,
+.trailers-rent-page select,
+.trailers-rent-page a {
+  font-family: inherit;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.rent-container {
+  width: min(1220px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes rent-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rent-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rent-icon-pop {
+  0% {
+    transform: scale(0.6) rotate(-12deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.08) rotate(4deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes rent-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rent-pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(193, 96, 43, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(193, 96, 43, 0);
+  }
+}
+
+.rent-hero-copy {
+  animation: rent-fade-up 0.7s ease both;
+}
+
+.rent-hero-visual {
+  animation: rent-fade-up 0.8s ease 0.1s both;
+}
+
+.rent-search-box {
+  animation: rent-fade-in 0.6s ease 0.2s both;
+}
+
+.rent-section-heading,
+.rent-inventory-header,
+.rent-process-heading {
+  animation: rent-fade-up 0.7s ease both;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.rent-hero {
+  padding: 88px 0 75px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.rent-hero-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.rent-hero-copy {
+  max-width: 570px;
+}
+
+.rent-eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: var(--accent);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.rent-hero-copy h1 {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.rent-hero-copy h1 span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--accent);
+  font-style: normal;
+}
+
+.rent-hero-description {
+  max-width: 490px;
+
+  margin: 20px 0 32px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.rent-hero-actions,
+.rent-cta-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rent-primary-button,
+.rent-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 48px;
+  padding: 0 24px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.rent-primary-button {
+  border: none;
+
+  background: var(--accent);
+  color: var(--white);
+
+  box-shadow: 0 10px 26px rgba(193, 96, 43, 0.2);
+}
+
+.rent-primary-button:hover {
+  background: var(--accent-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 30px rgba(193, 96, 43, 0.3);
+}
+
+.rent-secondary-button {
+  border: 1px solid var(--line);
+
+  background: transparent;
+  color: var(--ink);
+}
+
+.rent-secondary-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.rent-hero-visual {
+  min-width: 0;
+}
+
+.rent-hero-image {
+  position: relative;
+
+  width: 100%;
+  height: 440px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: var(--bg);
+
+  box-shadow:
+    0 40px 80px -30px rgba(23, 22, 15, 0.28),
+    0 8px 22px rgba(23, 22, 15, 0.08);
+}
+
+.rent-hero-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: saturate(0.9) contrast(1.03);
+
+  transition:
+    transform 0.7s ease,
+    filter 0.4s ease;
+}
+
+.rent-hero-image:hover img {
+  transform: scale(1.04);
+
+  filter: saturate(1) contrast(1.03);
+}
+
+.rent-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0.15) 0%,
+      rgba(17, 17, 17, 0.45) 65%,
+      rgba(17, 17, 17, 0.85) 100%
+    );
+}
+
+.rent-image-top {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+  right: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--white);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.rent-image-top strong {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.rent-image-bottom {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  color: var(--white);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.rent-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  background: rgba(23, 22, 15, 0.45);
+  backdrop-filter: blur(4px);
+
+  color: var(--white);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+}
+
+.rent-status i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  font-style: normal;
+  display: inline-block;
+
+  animation: rent-pulse-dot 1.8s ease-out infinite;
+}
+
+/* =====================================================
+   SEARCH + FILTERS
+===================================================== */
+
+.rent-search-section {
+  padding: 20px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  background: var(--white);
+
+  position: relative;
+  z-index: 5;
+}
+
+.rent-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* SEARCH BOX — compact, normal rounded rectangle (not a pill) */
+.rent-search-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  flex: 1 1 260px;
+  max-width: 420px;
+  min-height: 42px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  background: var(--bg);
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rent-search-box:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(193, 96, 43, 0.12);
+}
+
+.rent-search-box svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--soft);
+}
+
+.rent-search-box input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: inherit;
+  font-size: 13.5px;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rent-search-box input::-webkit-search-decoration,
+.rent-search-box input::-webkit-search-cancel-button,
+.rent-search-box input::-webkit-search-results-button,
+.rent-search-box input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.rent-search-box input::placeholder {
+  color: var(--soft);
+}
+
+.rent-filter-selects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Shared box look for the dropdown trigger (and Clear Filters) */
+.rent-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  min-height: 42px;
+  padding: 0 14px;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  background: var(--bg);
+
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rent-select-wrap:hover {
+  border-color: var(--accent);
+}
+
+.rent-select-wrap:focus-visible,
+.rent-select-wrap[aria-expanded="true"] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(193, 96, 43, 0.12);
+}
+
+/* Custom dropdown (replaces native <select> so the open list is
+   consistently, fully rounded across every browser) */
+.rent-dropdown {
+  position: relative;
+}
+
+.rent-dropdown-label {
+  color: var(--soft);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rent-dropdown-value {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rent-dropdown-chevron {
+  flex-shrink: 0;
+  margin-left: 2px;
+  color: var(--soft);
+  transition: transform 0.2s ease;
+}
+
+.rent-select-wrap[aria-expanded="true"] .rent-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.rent-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+
+  min-width: 100%;
+  width: max-content;
+  max-width: 240px;
+
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px -12px rgba(23, 22, 15, 0.22);
+
+  animation: rent-fade-in 0.15s ease both;
+}
+
+.rent-dropdown-option {
+  padding: 9px 12px;
+  border-radius: 9px;
+
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.rent-dropdown-option:hover,
+.rent-dropdown-option:focus-visible {
+  background: var(--bg);
+}
+
+.rent-dropdown-option.is-selected {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.rent-clear-filters {
+  min-height: 42px;
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: var(--accent);
+
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.rent-clear-filters:hover {
+  border-style: solid;
+  background: rgba(193, 96, 43, 0.08);
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+.rent-categories {
+  padding: 82px 0 88px;
+
+  background: var(--white);
+}
+
+.rent-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  align-items: end;
+
+  gap: 45px;
+
+  margin-bottom: 40px;
+}
+
+.rent-section-heading h2,
+.rent-inventory-header h2,
+.rent-process-heading h2,
+.rent-cta h2 {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-size: clamp(30px, 3.6vw, 46px);
+  font-weight: 700;
+
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.rent-section-heading h2 em,
+.rent-inventory-header h2 em,
+.rent-process-heading h2 em,
+.rent-cta h2 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.rent-section-heading > p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   CATEGORY GRID
+===================================================== */
+
+.rent-category-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.rent-category-card {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+
+  min-width: 0;
+  min-height: 130px;
+
+  padding: 20px;
+
+  border: 1px solid var(--line);
+  border-radius: 20px;
+
+  background: var(--white);
+  color: var(--ink);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow: 0 18px 40px -14px rgba(23, 22, 15, 0.1);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* "All Rental Trailers" / "Food Trailers" etc — soft warm tint
+   instead of solid black on hover/active */
+.rent-category-card:hover,
+.rent-category-card.active {
+  border-color: var(--accent-soft-border);
+
+  background: var(--accent-soft);
+  color: var(--ink);
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 18px 35px -22px rgba(193, 96, 43, 0.32);
+}
+
+.rent-category-number {
+  align-self: start;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.rent-category-icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin: 0 15px;
+
+  border-radius: 16px;
+
+  background: var(--bg);
+
+  color: var(--accent);
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.rent-category-card:hover .rent-category-icon,
+.rent-category-card.active .rent-category-icon {
+  background: var(--accent);
+  color: var(--white);
+
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.rent-category-card h3 {
+  margin: 0 0 7px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.rent-category-card p {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.rent-category-card:hover p,
+.rent-category-card.active p {
+  color: var(--muted);
+}
+
+.rent-category-arrow {
+  margin-left: 12px;
+
+  color: var(--accent);
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.rent-category-card:hover .rent-category-arrow,
+.rent-category-card.active .rent-category-arrow {
+  color: var(--accent-dark);
+
+  transform: translateX(3px);
+}
+
+/* =====================================================
+   INVENTORY
+===================================================== */
+
+.rent-inventory {
+  padding: 82px 0 90px;
+
+  background: var(--bg);
+}
+
+.rent-inventory-header {
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  align-items: end;
+
+  gap: 45px;
+
+  margin-bottom: 40px;
+}
+
+.rent-inventory-header > p {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   TRAILER CARD — flip card, matches Trailers for Sale
+===================================================== */
+
+.rent-trailer-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.rent-trailer-card {
+  position: relative;
+  min-height: 300px;
+
+  perspective: 1400px;
+  cursor: pointer;
+  outline: none;
+
+  animation: rent-fade-up 0.6s ease both;
+  animation-delay: calc(var(--card-i, 0) * 0.08s);
+}
+
+.rent-trailer-card:nth-child(1) { --card-i: 1; }
+.rent-trailer-card:nth-child(2) { --card-i: 2; }
+.rent-trailer-card:nth-child(3) { --card-i: 3; }
+.rent-trailer-card:nth-child(4) { --card-i: 4; }
+
+.rent-trailer-card:focus-visible .rent-card-inner {
+  box-shadow: 0 0 0 3px rgba(193, 96, 43, 0.35);
+  border-radius: 20px;
+}
+
+.rent-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* ================================
+   CARD FLIP
+   - Desktop (mouse/trackpad): flips on hover
+   - Touch devices (mobile/tablet): flips on tap, via .is-flipped
+     class toggled in JS (no :hover state on touch)
+================================ */
+
+@media (hover: hover) {
+  .rent-trailer-card:hover .rent-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (hover: none) {
+  .rent-trailer-card.is-flipped .rent-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.rent-card-face {
+  position: absolute;
+  inset: 0;
+
+  padding: 26px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+
+  box-shadow: 0 18px 40px -14px rgba(23, 22, 15, 0.14);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  transition: border-color 0.3s ease;
+}
+
+.rent-trailer-card:hover .rent-card-front {
+  border-color: var(--soft);
+}
+
+/* Back face — soft light tint, no black */
+.rent-card-back {
+  transform: rotateY(180deg);
+
+  background: var(--accent-soft);
+  border-color: var(--accent-soft-border);
+  color: var(--ink);
+}
+
+.rent-card-back h3 {
+  color: var(--ink);
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.rent-card-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--accent);
+  background: var(--bg);
+  border-radius: 16px;
+
+  animation: rent-icon-pop 0.5s ease both;
+  animation-delay: calc(var(--card-i, 0) * 0.08s + 0.15s);
+
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.rent-card-icon::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+
+  border-radius: 18px;
+  border: 1.5px dashed var(--accent);
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.rent-trailer-card:hover .rent-card-front .rent-card-icon {
+  transform: scale(1.1) rotate(-6deg);
+  background: var(--accent);
+  color: var(--white);
+}
+
+.rent-trailer-card:hover .rent-card-front .rent-card-icon::before {
+  opacity: 1;
+  animation: rent-ring-spin 3s linear infinite;
+}
+
+.rent-card-icon-back {
+  background: rgba(193, 96, 43, 0.12);
+  color: var(--accent);
+}
+
+.rent-card-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.rent-card-label {
+  margin-bottom: 8px;
+
+  color: var(--soft);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.rent-trailer-card h3 {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  font-weight: 700;
+}
+
+.rent-trailer-card .rent-card-content p {
+  margin: 12px 0 16px;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.rent-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+  padding-top: 14px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.rent-card-price {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.rent-card-price small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.rent-card-link {
+  width: fit-content;
+
+  margin-top: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--ink);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+}
+
+.rent-card-link svg {
+  transition: transform 0.2s ease;
+  color: var(--accent);
+}
+
+.rent-trailer-card:hover .rent-card-link {
+  color: var(--accent);
+}
+
+.rent-trailer-card:hover .rent-card-link svg {
+  transform: translateX(4px);
+}
+
+/* BACK FACE CONTENT */
+
+.rent-back-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+
+  margin: 18px 0;
+}
+
+.rent-back-pricing div {
+  padding: 10px 6px;
+
+  border: 1px solid var(--accent-soft-border);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  text-align: center;
+}
+
+.rent-back-pricing span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.rent-back-pricing strong {
+  display: block;
+
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rent-back-equipment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-bottom: auto;
+}
+
+.rent-back-equipment small {
+  padding: 6px 10px;
+
+  border: 1px solid var(--accent-soft-border);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* Book Now — accent color, no black */
+.rent-back-btn {
+  width: fit-content;
+  margin-top: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+  border-radius: 30px;
+
+  background: var(--accent);
+  color: var(--white);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.rent-back-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.rent-empty {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 70px 20px;
+
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+
+  background: var(--white);
+
+  text-align: center;
+}
+
+.rent-empty svg {
+  color: var(--accent);
+}
+
+.rent-empty h3 {
+  margin: 16px 0 7px;
+
+  color: var(--ink);
+
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.rent-empty p {
+  margin: 0 0 20px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.rent-empty button {
+  min-height: 44px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--accent);
+  color: var(--white);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.rent-empty button:hover {
+  background: var(--accent-dark);
+
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   PROCESS ("How Renting Works" — dates/steps section)
+===================================================== */
+
+.rent-process {
+  padding: 82px 0;
+
+  background: var(--white);
+}
+
+.rent-process-heading {
+  margin-bottom: 40px;
+}
+
+.rent-process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.rent-process-card {
+  position: relative;
+
+  min-height: 225px;
+
+  padding: 26px;
+
+  border: 1px solid var(--line);
+  border-radius: 20px;
+
+  background: var(--white);
+
+  box-shadow: 0 18px 40px -14px rgba(23, 22, 15, 0.1);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Soft warm tint on hover instead of black */
+.rent-process-card:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft-border);
+  color: var(--ink);
+
+  transform: translateY(-6px);
+}
+
+.rent-process-card > span {
+  display: block;
+
+  margin-bottom: 27px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.rent-process-card svg {
+  margin-bottom: 21px;
+  color: var(--accent);
+}
+
+.rent-process-card:hover svg {
+  color: var(--accent-dark);
+}
+
+.rent-process-card h3 {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.rent-process-card p {
+  max-width: 285px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.rent-process-card:hover p {
+  color: var(--muted);
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.rent-cta {
+  padding: 75px 0;
+
+  background: var(--bg);
+}
+
+.rent-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 45px;
+
+  padding: 42px;
+
+  border-radius: 24px;
+
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-soft-border);
+  color: var(--ink);
+}
+
+.rent-cta-inner > div:first-child {
+  max-width: 650px;
+}
+
+.rent-cta-inner .rent-eyebrow {
+  color: var(--accent-dark);
+}
+
+.rent-cta-inner h2 {
+  color: var(--ink);
+}
+
+.rent-cta-inner > div:first-child p {
+  max-width: 510px;
+
+  margin: 16px 0 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.rent-cta .rent-primary-button {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.rent-cta .rent-primary-button:hover {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+.rent-cta .rent-secondary-button {
+  border-color: var(--accent-soft-border);
+  color: var(--ink);
+}
+
+.rent-cta .rent-secondary-button:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .rent-container {
+    width: calc(100% - 48px);
+  }
+
+  .rent-hero {
+    padding: 70px 0 65px;
+  }
+
+  .rent-hero-inner {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .rent-hero-copy {
+    max-width: 720px;
+  }
+
+  .rent-hero-image {
+    height: 400px;
+  }
+
+  .rent-section-heading,
+  .rent-inventory-header {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .rent-trailer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rent-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rent-search-box {
+    max-width: none;
+  }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .rent-container {
+    width: calc(100% - 28px);
+  }
+
+  .rent-hero {
+    padding: 62px 0 55px;
+  }
+
+  .rent-hero-copy h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  .rent-hero-description {
+    margin: 18px 0 24px;
+
+    font-size: 14px;
+  }
+
+  .rent-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .rent-primary-button,
+  .rent-secondary-button {
+    width: 100%;
+  }
+
+  .rent-hero-image {
+    height: 285px;
+
+    border-radius: 20px;
+  }
+
+  .rent-image-top {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .rent-image-bottom {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .rent-search-section {
+    padding: 14px 0;
+  }
+
+  .rent-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  /* Search bar: small, normal-rounded, full width like most sites.
+     flex: none stops the column-direction flexbox from stretching
+     the box's height (it was inheriting the row-layout flex-basis). */
+  .rent-search-box {
+    flex: none;
+    max-width: none;
+    width: 100%;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 12px;
+  }
+
+  .rent-search-box svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .rent-search-box input {
+    font-size: 14px;
+  }
+
+  .rent-filter-selects {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .rent-select-wrap,
+  .rent-clear-filters {
+    justify-content: space-between;
+    width: 100%;
+    min-height: 42px;
+    border-radius: 10px;
+  }
+
+  .rent-dropdown-menu {
+    max-width: none;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+
+  .rent-categories {
+    padding: 60px 0;
+  }
+
+  .rent-section-heading h2,
+  .rent-inventory-header h2,
+  .rent-process-heading h2,
+  .rent-cta h2 {
+    font-size: 30px;
+  }
+
+  .rent-section-heading > p,
+  .rent-inventory-header > p {
+    font-size: 13px;
+  }
+
+  .rent-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rent-category-card {
+    grid-template-columns: auto auto 1fr auto;
+
+    min-height: 112px;
+
+    padding: 16px;
+  }
+
+  .rent-category-icon {
+    width: 40px;
+    height: 40px;
+
+    margin: 0 12px;
+  }
+
+  .rent-category-card h3 {
+    font-size: 16px;
+  }
+
+  .rent-category-card p {
+    font-size: 11px;
+  }
+
+  .rent-inventory {
+    padding: 60px 0;
+  }
+
+  /* 2 cards per row on mobile, like Trailers for Sale */
+  .rent-trailer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .rent-trailer-card {
+    min-height: 240px;
+  }
+
+  .rent-card-face {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .rent-card-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+    border-radius: 11px;
+  }
+
+  .rent-card-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .rent-card-label {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+    margin-bottom: 5px;
+  }
+
+  .rent-trailer-card h3 {
+    font-size: 13.5px;
+    line-height: 1.2;
+  }
+
+  .rent-trailer-card .rent-card-content p {
+    margin: 6px 0 8px;
+    font-size: 10.5px;
+    line-height: 1.45;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+     line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .rent-card-meta {
+    margin-bottom: 10px;
+    padding-top: 8px;
+    font-size: 9.5px;
+  }
+
+  .rent-card-price {
+    font-size: 12.5px;
+  }
+
+  .rent-card-price small {
+    font-size: 8.5px;
+  }
+
+  .rent-card-link {
+    font-size: 9.5px;
+    gap: 5px;
+  }
+
+  .rent-card-link svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .rent-card-back h3 {
+    font-size: 14.5px;
+  }
+
+  .rent-back-pricing {
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .rent-back-pricing div {
+    padding: 6px 4px;
+    border-radius: 9px;
+  }
+
+  .rent-back-pricing span {
+    font-size: 6.5px;
+  }
+
+  .rent-back-pricing strong {
+    font-size: 10px;
+  }
+
+  .rent-back-equipment small {
+    padding: 4px 7px;
+    font-size: 8px;
+  }
+
+  .rent-back-btn {
+    margin-top: 10px;
+    padding: 7px 12px;
+    font-size: 9.5px;
+    gap: 5px;
+  }
+
+  .rent-process {
+    padding: 60px 0;
+  }
+
+  .rent-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rent-process-card {
+    min-height: auto;
+  }
+
+  .rent-cta {
+    padding: 55px 0;
+  }
+
+  .rent-cta-inner {
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  .rent-cta-actions {
+    width: 100%;
+
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .rent-cta-actions a {
+    width: 100%;
+  }
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 430px) {
+
+  .rent-container {
+    width: calc(100% - 22px);
+  }
+
+  .rent-hero-copy h1 {
+    font-size: 36px;
+  }
+
+  .rent-hero-image {
+    height: 250px;
+  }
+
+  .rent-section-heading h2,
+  .rent-inventory-header h2,
+  .rent-process-heading h2,
+  .rent-cta h2 {
+    font-size: 27px;
+  }
+
+  .rent-category-card {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .rent-category-number {
+    display: none;
+  }
+
+  .rent-category-icon {
+    margin: 0 12px 0 0;
+  }
+
+  .rent-category-card p {
+    max-width: 235px;
+  }
+
+  .rent-trailer-grid {
+    gap: 8px;
+  }
+
+  .rent-trailer-card {
+    min-height: 215px;
+  }
+
+  .rent-card-face {
+    padding: 12px;
+  }
+
+  .rent-trailer-card h3 {
+    font-size: 12.5px;
+  }
+
+  .rent-back-pricing strong {
+    font-size: 9.5px;
+  }
+
+}
+
+/* =====================================================
+   VERY SMALL
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .rent-hero-copy h1 {
+    font-size: 32px;
+  }
+
+  .rent-section-heading h2,
+  .rent-inventory-header h2,
+  .rent-process-heading h2,
+  .rent-cta h2 {
+    font-size: 25px;
+  }
+
+  .rent-trailer-card {
+    min-height: 205px;
+  }
+
+  .rent-trailer-card h3 {
+    font-size: 12px;
+  }
+
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .rent-hero-copy,
+  .rent-hero-visual,
+  .rent-search-box,
+  .rent-section-heading,
+  .rent-inventory-header,
+  .rent-process-heading,
+  .rent-status i,
+  .rent-card-icon,
+  .rent-dropdown-menu {
+    animation: none !important;
+  }
+
+  .rent-card-inner {
+    transition: none !important;
+  }
+}

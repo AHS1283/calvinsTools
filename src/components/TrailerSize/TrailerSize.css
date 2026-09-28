@@ -1,0 +1,712 @@
+/* =========================================================
+   TRAILER SIZE
+   Matches Why Calvin's Tools design system
+   ========================================================= */
+
+.trailer-size-section {
+  --ink: #17160f;
+  --muted: #777267;
+  --soft: #a8a398;
+  --line: #ded9ce;
+  --accent: #c1602b;
+  --accent-ink: #ffffff;
+
+  --shadow-xs: 0 1px 2px rgba(23, 22, 15, 0.06);
+
+  --shadow-sm:
+    0 1px 2px rgba(23, 22, 15, 0.07),
+    0 6px 16px -8px rgba(23, 22, 15, 0.16);
+
+  --shadow-md:
+    0 2px 4px rgba(23, 22, 15, 0.06),
+    0 18px 34px -16px rgba(23, 22, 15, 0.22),
+    0 40px 70px -32px rgba(23, 22, 15, 0.2);
+
+  --shadow-accent:
+    0 10px 24px -10px rgba(193, 96, 43, 0.45),
+    0 2px 6px rgba(193, 96, 43, 0.3);
+
+  --ease: cubic-bezier(0.16, 0.84, 0.24, 1);
+
+  position: relative;
+  width: 100%;
+  padding: 100px 0 90px;
+  background: #ffffff;
+  color: var(--ink);
+  overflow: hidden;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.trailer-size-container {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 70px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.trailer-size-header {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 60px;
+  align-items: end;
+
+  padding: 25px 0 50px;
+  margin-bottom: 45px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.trailer-size-heading {
+  min-width: 0;
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.trailer-size-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+
+  color: var(--accent);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.trailer-size-heading h2 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(50px, 5.6vw, 76px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.trailer-size-heading h2 span {
+  display: block;
+
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.trailer-size-intro {
+  max-width: 360px;
+}
+
+.trailer-size-intro p {
+  margin: 0 0 25px;
+
+  color: var(--muted);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   EXPLORE BUTTON
+   ========================================================= */
+
+.trailer-size-main-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  padding: 0 18px 0 22px;
+
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+
+  background: var(--ink);
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+
+  box-shadow: var(--shadow-xs);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.trailer-size-main-link svg {
+  width: 27px;
+  height: 27px;
+
+  padding: 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    background 0.25s ease;
+}
+
+.trailer-size-main-link:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+
+  box-shadow: var(--shadow-accent);
+
+  transform: translateY(-2px);
+}
+
+.trailer-size-main-link:hover svg {
+  background: var(--ink);
+  transform: rotate(45deg);
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.trailer-size-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+
+  width: 100%;
+}
+
+/* =========================================================
+   SIZE CARD
+   ========================================================= */
+
+.trailer-size-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+
+  column-gap: 20px;
+  row-gap: 8px;
+
+  min-width: 0;
+
+  padding: 28px 30px;
+
+  border: 1px solid var(--line);
+  border-radius: 20px;
+
+  background: #ffffff;
+  color: var(--ink);
+
+  text-decoration: none;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 420ms var(--ease),
+    box-shadow 240ms var(--ease),
+    border-color 240ms var(--ease),
+    background 240ms var(--ease);
+}
+
+/* =========================================================
+   TOP ACCENT LINE
+   ========================================================= */
+
+.trailer-size-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--accent);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.35s ease;
+}
+
+.trailer-size-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--accent);
+
+  background: #ffffff;
+
+  box-shadow: var(--shadow-md);
+}
+
+.trailer-size-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.trailer-size-number {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  padding-top: 21px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  border: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+
+  box-shadow: var(--shadow-xs);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.trailer-size-number strong {
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.trailer-size-number small {
+  margin-left: 2px;
+
+  color: inherit;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* Number hover */
+
+.trailer-size-card:hover .trailer-size-number {
+  background: var(--accent);
+  border-color: var(--accent);
+
+  color: #ffffff;
+
+  box-shadow: var(--shadow-accent);
+
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.trailer-size-content {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.trailer-size-content h3 {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.trailer-size-content p {
+  margin: 7px 0 0;
+
+  color: var(--muted);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.trailer-size-arrow {
+  grid-column: 2;
+  grid-row: 2;
+
+  justify-self: end;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: -35px;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  color: var(--soft);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.trailer-size-card:hover .trailer-size-arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+
+  color: #ffffff;
+
+  transform: translate(3px, -3px) rotate(45deg);
+}
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.trailer-size-bottom {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 48px;
+  padding-top: 30px;
+
+  border-top: 1px solid var(--line);
+}
+
+.trailer-size-line {
+  width: 38px;
+  height: 1px;
+
+  background: var(--line);
+}
+
+.trailer-size-bottom p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.trailer-size-bottom a {
+  color: var(--ink);
+
+  font-weight: 600;
+
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+
+  transition: color 0.25s ease;
+}
+
+.trailer-size-bottom a:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .trailer-size-section {
+    padding: 80px 0 75px;
+  }
+
+  .trailer-size-container {
+    width: calc(100% - 50px);
+  }
+
+  .trailer-size-header {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 20px 0 35px;
+
+    margin-bottom: 35px;
+  }
+
+  .trailer-size-intro {
+    max-width: 500px;
+  }
+
+  .trailer-size-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .trailer-size-section {
+    padding: 65px 0 60px;
+  }
+
+  .trailer-size-container {
+    width: calc(100% - 28px);
+  }
+
+  .trailer-size-header {
+    gap: 20px;
+
+    padding: 15px 0 30px;
+
+    margin-bottom: 28px;
+  }
+
+  .trailer-size-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 11px;
+    letter-spacing: 0.09em;
+  }
+
+  .trailer-size-heading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+
+    line-height: 0.94;
+  }
+
+  .trailer-size-intro {
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  .trailer-size-intro p {
+    margin-bottom: 18px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .trailer-size-main-link {
+    min-height: 45px;
+
+    padding: 0 15px 0 18px;
+
+    font-size: 11px;
+  }
+
+  .trailer-size-main-link svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* -----------------------------------------
+     2 COLUMN MOBILE CARDS
+     Same visual idea as Why Calvin's
+  ----------------------------------------- */
+
+  .trailer-size-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+  .trailer-size-card {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: 175px;
+
+    padding: 18px 12px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    gap: 7px;
+
+    box-shadow: var(--shadow-xs);
+  }
+
+  .trailer-size-number {
+    width: 46px;
+    height: 46px;
+
+    padding-top: 15px;
+
+    font-size: 15px;
+
+    margin-bottom: 2px;
+  }
+
+  .trailer-size-number small {
+    font-size: 7px;
+  }
+
+  .trailer-size-content {
+    width: 100%;
+  }
+
+  .trailer-size-content h3 {
+    font-size: 15px;
+
+    line-height: 1.25;
+  }
+
+  .trailer-size-content p {
+    margin-top: 5px;
+
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .trailer-size-arrow {
+    display: none;
+  }
+
+  .trailer-size-bottom {
+    display: block;
+
+    margin-top: 30px;
+    padding-top: 22px;
+  }
+
+  .trailer-size-line {
+    display: none;
+  }
+
+  .trailer-size-bottom p {
+    margin: 0;
+
+    font-size: 13px;
+
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .trailer-size-heading h2 {
+    font-size: 34px;
+  }
+
+  .trailer-size-grid {
+    gap: 9px;
+  }
+
+  .trailer-size-card {
+    min-height: 165px;
+
+    padding: 16px 10px;
+  }
+
+  .trailer-size-number {
+    width: 43px;
+    height: 43px;
+
+    padding-top: 14px;
+
+    font-size: 14px;
+  }
+
+  .trailer-size-content h3 {
+    font-size: 14px;
+  }
+
+  .trailer-size-content p {
+    font-size: 10.5px;
+  }
+
+  .trailer-size-bottom p {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .trailer-size-card,
+  .trailer-size-card::before,
+  .trailer-size-number,
+  .trailer-size-arrow,
+  .trailer-size-main-link {
+    transition: none !important;
+  }
+
+  .trailer-size-card:hover {
+    transform: none;
+  }
+}

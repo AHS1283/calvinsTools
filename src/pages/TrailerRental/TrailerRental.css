@@ -1,0 +1,2001 @@
+/* =========================================================
+   CALVIN'S TOOLS — TRAILERS FOR RENT
+   PREMIUM WHITE + CREAM EDITORIAL THEME
+   FONT: TIMES NEW ROMAN
+========================================================= */
+
+.trailers-rent-page {
+  --bg: #f7f5ef;
+  --white: #ffffff;
+  --ink: #17160f;
+  --muted: #777267;
+  --soft: #a8a398;
+  --line: #ded9ce;
+  --accent: #c1602b;
+  --accent-dark: #8f4620;
+  --accent-soft: #f6ece2;
+  --accent-soft-border: #ecdac8;
+
+  color: var(--ink);
+  background: var(--white);
+
+  /* UPDATED FONT */
+  font-family: "Times New Roman", Times, serif;
+
+  overflow: hidden;
+}
+
+.rent-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   GLOBAL FONT
+========================================================= */
+
+.trailers-rent-page *,
+.trailers-rent-page *::before,
+.trailers-rent-page *::after {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.trailers-rent-page button,
+.trailers-rent-page input,
+.trailers-rent-page select {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes rent-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rent-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rent-icon-pop {
+  0% {
+    transform: scale(0.6) rotate(-12deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.08) rotate(4deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes rent-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rent-pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(193, 96, 43, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(193, 96, 43, 0);
+  }
+}
+
+@keyframes rent-kenburns {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes rent-btn-shine {
+  from {
+    left: -60%;
+  }
+
+  to {
+    left: 130%;
+  }
+}
+
+.rent-hero-copy {
+  animation: rent-fade-up 0.7s ease both;
+}
+
+.rent-hero-stat {
+  animation: rent-fade-up 0.8s ease 0.1s both;
+}
+
+.rent-search-box {
+  animation: rent-fade-in 0.6s ease 0.2s both;
+}
+
+.rent-section-heading {
+  animation: rent-fade-up 0.7s ease both;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.rent-hero {
+  color: var(--ink);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.rent-hero-inner {
+  min-height: 620px;
+
+  padding: 75px 0 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.85fr)
+    minmax(420px, 1.15fr);
+
+  align-items: center;
+
+  gap: 55px;
+}
+
+.rent-hero-copy {
+  max-width: 560px;
+}
+
+.rent-eyebrow {
+  display: inline-flex;
+
+  margin-bottom: 18px;
+
+  color: var(--accent);
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.rent-hero h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 4.2vw, 64px);
+
+  line-height: 0.98;
+
+  letter-spacing: -1.5px;
+
+  font-weight: 700;
+}
+
+.rent-hero h1 span {
+  display: block;
+
+  color: var(--accent);
+}
+
+.rent-hero-copy > p {
+  max-width: 510px;
+
+  margin: 22px 0 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.rent-hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.rent-primary-btn,
+.rent-secondary-btn {
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  text-decoration: none;
+
+  border-radius: 50px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.rent-primary-btn {
+  position: relative;
+
+  overflow: hidden;
+
+  color: var(--white);
+
+  background: var(--ink);
+
+  border: none;
+
+  box-shadow:
+    0 10px 26px rgba(23, 22, 15, 0.18);
+}
+
+.rent-primary-btn::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -60%;
+
+  width: 40%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+}
+
+.rent-primary-btn:hover::after {
+  animation: rent-btn-shine 0.9s ease;
+}
+
+.rent-primary-btn:hover {
+  background: var(--accent);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(193, 96, 43, 0.28);
+}
+
+.rent-secondary-btn {
+  color: var(--ink);
+
+  background: transparent;
+
+  border: 1px solid var(--line);
+}
+
+.rent-secondary-btn:hover {
+  border-color: var(--accent);
+
+  color: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.rent-hero-stat {
+  position: relative;
+
+  align-self: start;
+
+  min-height: 570px;
+  height: 570px;
+
+  padding: 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 40px 80px -30px rgba(23, 22, 15, 0.28),
+    0 8px 22px rgba(23, 22, 15, 0.08);
+}
+
+.rent-hero-stat::before {
+  content: "";
+
+  position: absolute;
+  inset: -12px;
+  z-index: 0;
+
+  background-image: inherit;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation:
+    rent-kenburns
+    16s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.rent-hero-stat::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.18),
+      transparent 30%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.28)
+    );
+
+  pointer-events: none;
+}
+
+.rent-hero-stat-top,
+.rent-hero-stat-bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.rent-hero-tag {
+  color: var(--white);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.rent-hero-count {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rent-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border-radius: 30px;
+
+  color: var(--white);
+  background: rgba(23, 22, 15, 0.48);
+
+  backdrop-filter: blur(5px);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.rent-hero-pill i {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  font-style: normal;
+
+  animation:
+    rent-pulse-dot 1.8s ease-out infinite;
+}
+
+/* =========================================================
+   SEARCH + FILTERS
+========================================================= */
+
+.rent-search-section {
+  padding: 20px 0;
+
+  background: var(--white);
+
+  border-bottom: 1px solid var(--line);
+
+  position: relative;
+
+  z-index: 5;
+}
+
+.rent-filters-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.rent-search-box {
+  flex: 1 1 260px;
+
+  max-width: 420px;
+
+  min-height: 46px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: var(--bg);
+
+  border: 1px solid var(--line);
+
+  border-radius: 10px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.rent-search-box:focus-within {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px rgba(193, 96, 43, 0.12);
+}
+
+.rent-search-box svg {
+  flex-shrink: 0;
+
+  width: 18px;
+
+  height: 18px;
+
+  color: var(--soft);
+}
+
+.rent-search-box input {
+  width: 100%;
+
+  border: 0;
+
+  outline: none;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  color: var(--ink);
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  -webkit-appearance: none;
+
+  appearance: none;
+}
+
+.rent-search-box input::-webkit-search-decoration,
+.rent-search-box input::-webkit-search-cancel-button,
+.rent-search-box input::-webkit-search-results-button,
+.rent-search-box input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+
+  display: none;
+}
+
+.rent-search-box input::placeholder {
+  color: var(--soft);
+}
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.rent-filter-selects {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.rent-select-wrap {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 46px;
+
+  padding: 0 15px;
+
+  background: var(--bg);
+
+  border: 1px solid var(--line);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.rent-select-wrap:hover {
+  border-color: var(--accent);
+}
+
+.rent-select-wrap:focus-visible,
+.rent-select-wrap[aria-expanded="true"] {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px rgba(193, 96, 43, 0.12);
+}
+
+.rent-dropdown {
+  position: relative;
+}
+
+.rent-dropdown-label {
+  color: var(--soft);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.rent-dropdown-value {
+  color: var(--ink);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.rent-dropdown-chevron {
+  flex-shrink: 0;
+
+  margin-left: 2px;
+
+  color: var(--soft);
+
+  transition: transform 0.2s ease;
+}
+
+.rent-select-wrap[aria-expanded="true"]
+  .rent-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.rent-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  left: 0;
+
+  z-index: 20;
+
+  min-width: 100%;
+
+  width: max-content;
+
+  max-width: 260px;
+
+  margin: 0;
+
+  padding: 7px;
+
+  list-style: none;
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 18px 40px -12px rgba(23, 22, 15, 0.22);
+
+  animation: rent-fade-in 0.15s ease both;
+}
+
+.rent-dropdown-option {
+  padding: 11px 13px;
+
+  border-radius: 9px;
+
+  color: var(--ink);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.rent-dropdown-option:hover,
+.rent-dropdown-option:focus-visible {
+  background: var(--bg);
+}
+
+.rent-dropdown-option.is-selected {
+  background: var(--accent-soft);
+
+  color: var(--accent-dark);
+}
+
+/* =========================================================
+   CLEAR FILTERS
+========================================================= */
+
+.rent-clear-filters {
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  background: transparent;
+
+  border: 1px dashed var(--accent);
+
+  border-radius: 10px;
+
+  color: var(--accent);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.rent-clear-filters:hover {
+  border-style: solid;
+
+  background: rgba(193, 96, 43, 0.08);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.rent-category-section {
+  padding: 88px 0;
+}
+
+.rent-specialty {
+  background: var(--bg);
+}
+
+.rent-section-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.75fr);
+
+  align-items: end;
+
+  gap: 50px;
+
+  margin-bottom: 42px;
+}
+
+.rent-section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(36px, 4vw, 52px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+
+  font-weight: 700;
+}
+
+.rent-section-heading > p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.rent-card-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.rent-trailer-card {
+  position: relative;
+
+  min-height: 290px;
+
+  cursor: pointer;
+
+  outline: none;
+
+  animation:
+    rent-fade-up 0.6s ease both;
+
+  animation-delay:
+    calc(var(--card-i, 0) * 0.08s);
+}
+
+.rent-trailer-card:nth-child(1) {
+  --card-i: 1;
+}
+
+.rent-trailer-card:nth-child(2) {
+  --card-i: 2;
+}
+
+.rent-trailer-card:nth-child(3) {
+  --card-i: 3;
+}
+
+.rent-trailer-card:nth-child(4) {
+  --card-i: 4;
+}
+
+.rent-trailer-card:nth-child(5) {
+  --card-i: 5;
+}
+
+.rent-trailer-card:nth-child(6) {
+  --card-i: 6;
+}
+
+.rent-trailer-card:nth-child(7) {
+  --card-i: 7;
+}
+
+.rent-trailer-card:nth-child(8) {
+  --card-i: 8;
+}
+
+.rent-trailer-card:nth-child(9) {
+  --card-i: 9;
+}
+
+.rent-trailer-card:nth-child(10) {
+  --card-i: 10;
+}
+
+.rent-trailer-card:nth-child(11) {
+  --card-i: 11;
+}
+
+.rent-trailer-card:nth-child(12) {
+  --card-i: 12;
+}
+
+.rent-trailer-card:focus-visible .rent-card-face {
+  box-shadow:
+    0 0 0 3px rgba(193, 96, 43, 0.22),
+    0 18px 40px -14px rgba(23, 22, 15, 0.14);
+}
+
+.rent-card-face {
+  position: relative;
+
+  width: 100%;
+
+  min-height: inherit;
+
+  padding: 26px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 18px 40px -14px rgba(23, 22, 15, 0.14);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.rent-trailer-card:hover .rent-card-face {
+  transform: translateY(-5px);
+
+  border-color: var(--soft);
+
+  box-shadow:
+    0 24px 46px -16px rgba(23, 22, 15, 0.2);
+}
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.rent-card-image {
+  width: 100%;
+
+  height: 170px;
+
+  margin: -26px -26px 20px;
+
+  overflow: hidden;
+
+  background: var(--bg);
+
+  border-radius: 20px 20px 0 0;
+}
+
+.rent-card-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.rent-trailer-card:hover .rent-card-image img {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.rent-card-icon {
+  position: relative;
+
+  width: 50px;
+
+  height: 50px;
+
+  margin-bottom: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--accent);
+
+  background: var(--bg);
+
+  border-radius: 16px;
+
+  animation:
+    rent-icon-pop 0.5s ease both;
+
+  animation-delay:
+    calc(var(--card-i, 0) * 0.08s + 0.15s);
+
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.rent-card-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: 18px;
+
+  border: 1.5px dashed var(--accent);
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.rent-trailer-card:hover .rent-card-icon {
+  transform: scale(1.08) rotate(-4deg);
+
+  background: var(--accent);
+
+  color: var(--white);
+}
+
+.rent-trailer-card:hover
+  .rent-card-icon::before {
+  opacity: 1;
+
+  animation:
+    rent-ring-spin 3s linear infinite;
+}
+
+.rent-card-icon svg {
+  transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.rent-card-content {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.rent-card-label {
+  margin-bottom: 8px;
+
+  color: var(--soft);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.rent-trailer-card h3 {
+  margin: 0;
+
+  font-size: 26px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.4px;
+
+  font-weight: 700;
+}
+
+.rent-trailer-card p {
+  margin: 13px 0 22px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+.rent-card-link {
+  width: fit-content;
+
+  margin-top: auto;
+
+  padding: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--ink);
+
+  background: transparent;
+
+  border: 0;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rent-card-link svg {
+  transition: transform 0.2s ease;
+
+  color: var(--accent);
+}
+
+.rent-trailer-card:hover .rent-card-link {
+  color: var(--accent);
+}
+
+.rent-trailer-card:hover
+  .rent-card-link svg {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.rent-no-results {
+  grid-column: 1 / -1;
+
+  padding: 40px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  text-align: center;
+
+  border: 1px dashed var(--line);
+
+  border-radius: 20px;
+}
+
+.rent-no-results-global {
+  grid-column: unset;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.rent-loading {
+  min-height: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.rent-loader {
+  width: 42px;
+
+  height: 42px;
+
+  margin-bottom: 18px;
+
+  border: 3px solid var(--line);
+
+  border-top-color: var(--accent);
+
+  border-radius: 50%;
+
+  animation:
+    rent-ring-spin 0.8s linear infinite;
+}
+
+.rent-loading p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.rent-error {
+  min-height: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.rent-error h2 {
+  margin: 0;
+
+  font-size: 34px;
+}
+
+.rent-error p {
+  max-width: 520px;
+
+  margin: 14px 0 24px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SIZE
+========================================================= */
+
+.rent-size-section {
+  padding: 88px 0;
+
+  background: var(--white);
+}
+
+.rent-size-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.rent-size-card {
+  min-height: 120px;
+
+  padding: 21px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  color: var(--ink);
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: 18px;
+
+  text-align: left;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.rent-size-card:hover {
+  transform: translateY(-3px);
+
+  background: var(--bg);
+
+  border-color: var(--soft);
+}
+
+.rent-size-card > svg {
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  color: var(--accent);
+
+  transition: transform 0.3s ease;
+}
+
+.rent-size-card:hover > svg {
+  transform: translate(3px, -3px);
+}
+
+.rent-size-number {
+  min-width: 62px;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+.rent-size-number span {
+  margin-left: 3px;
+
+  font-size: 12px;
+
+  letter-spacing: 0.6px;
+}
+
+.rent-size-info h3 {
+  margin: 0 0 5px;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.rent-size-info span {
+  color: var(--muted);
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.rent-cta {
+  color: var(--white);
+
+  background: var(--ink);
+}
+
+.rent-cta-inner {
+  min-height: 320px;
+
+  padding: 70px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.rent-cta h2 {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size: clamp(36px, 4vw, 54px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+
+  font-weight: 700;
+}
+
+.rent-cta h2 span {
+  display: block;
+
+  color: var(--accent);
+}
+
+.rent-cta p {
+  max-width: 560px;
+
+  margin: 18px 0 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+.rent-cta .rent-primary-btn {
+  flex-shrink: 0;
+}
+
+.rent-cta .rent-primary-btn:hover {
+  background: var(--accent);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+  .rent-hero-inner {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    min-height: auto;
+  }
+
+  /* Image on top, text below */
+  .rent-hero-copy {
+    order: 2;
+  }
+
+  .rent-hero-stat {
+    order: 1;
+
+    min-height: 440px;
+    height: 440px;
+    margin-top: 20px;
+  }
+
+  .rent-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .rent-card-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .rent-size-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .rent-cta-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .rent-search-box {
+    max-width: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  .rent-container {
+    width: calc(100% - 20px);
+  }
+
+  .rent-hero-inner {
+    min-height: auto;
+
+    padding:
+      calc(
+        90px + env(safe-area-inset-top, 0px)
+      )
+      0
+      36px;
+
+    gap: 28px;
+  }
+
+  .rent-eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .rent-hero h1 {
+    font-size: 34px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .rent-hero-copy > p {
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    margin-top: 14px;
+  }
+
+  .rent-hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-top: 24px;
+  }
+
+  .rent-primary-btn,
+  .rent-secondary-btn {
+    width: 100%;
+
+    min-height: 46px;
+
+    font-size: 15px;
+  }
+
+  .rent-hero-stat {
+    min-height: 360px;
+    height: 360px;
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background-position: center center;
+  }
+
+  .rent-hero-stat::before {
+    background-position: center center;
+  }
+
+  .rent-hero-tag {
+    font-size: 10px;
+  }
+
+  .rent-hero-count {
+    font-size: 11px;
+  }
+
+  .rent-hero-pill {
+    padding: 6px 10px;
+
+    font-size: 9px;
+  }
+
+  /* =======================================================
+     SEARCH
+  ======================================================== */
+
+  .rent-search-section {
+    padding: 14px 0;
+  }
+
+  .rent-filters-row {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+  }
+
+  .rent-search-box {
+    flex: none;
+
+    max-width: none;
+
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 0 14px;
+
+    border-radius: 12px;
+  }
+
+  .rent-search-box svg {
+    width: 17px;
+
+    height: 17px;
+  }
+
+  .rent-search-box input {
+    font-size: 16px;
+  }
+
+  /* =======================================================
+     FILTERS
+  ======================================================== */
+
+  .rent-filter-selects {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+  .rent-select-wrap {
+    min-height: 42px;
+
+    padding: 0 10px;
+
+    border-radius: 9px;
+
+    justify-content: space-between;
+  }
+
+  .rent-dropdown-label {
+    font-size: 10px;
+  }
+
+  .rent-dropdown-value {
+    font-size: 14px;
+  }
+
+  .rent-dropdown-menu {
+    max-width: none;
+
+    left: 0;
+
+    right: 0;
+
+    width: auto;
+  }
+
+  .rent-dropdown-option {
+    font-size: 15px;
+
+    padding: 10px 12px;
+  }
+
+  .rent-clear-filters {
+    grid-column: 1 / -1;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+  }
+
+  /* =======================================================
+     SECTIONS
+  ======================================================== */
+
+  .rent-category-section,
+  .rent-size-section {
+    padding: 48px 0;
+  }
+
+  .rent-section-heading {
+    margin-bottom: 23px;
+
+    gap: 14px;
+  }
+
+  .rent-section-heading h2 {
+    font-size: 29px;
+
+    line-height: 1.05;
+  }
+
+  .rent-section-heading > p {
+    font-size: 16px;
+
+    line-height: 1.55;
+  }
+
+  /* =======================================================
+     CARDS
+  ======================================================== */
+
+  .rent-card-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .rent-trailer-card {
+    min-height: 260px;
+
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rent-trailer-card:hover .rent-card-face {
+    transform: none;
+  }
+
+  .rent-card-face {
+    padding: 14px;
+
+    border-radius: 14px;
+  }
+
+  .rent-card-image {
+    height: 110px;
+
+    margin: -14px -14px 12px;
+
+    border-radius:
+      14px 14px 0 0;
+  }
+
+  .rent-card-icon {
+    width: 38px;
+
+    height: 38px;
+
+    margin-bottom: 12px;
+
+    border-radius: 11px;
+
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rent-trailer-card:hover .rent-card-icon {
+    transform: none;
+    background: var(--bg);
+    color: var(--accent);
+  }
+
+  .rent-trailer-card:hover .rent-card-icon::before {
+    animation: none !important;
+    opacity: 0;
+  }
+
+  .rent-card-icon svg {
+    width: 18px;
+
+    height: 18px;
+  }
+
+  .rent-card-label {
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 5px;
+  }
+
+  .rent-trailer-card h3 {
+    font-size: 19px;
+
+    line-height: 1.15;
+  }
+
+  .rent-trailer-card p {
+    margin: 7px 0 11px;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+  }
+
+  .rent-card-link {
+    font-size: 14px;
+
+    gap: 5px;
+  }
+
+  .rent-card-link svg {
+    width: 14px;
+
+    height: 14px;
+  }
+
+  .rent-no-results {
+    padding: 28px 16px;
+
+    font-size: 14px;
+  }
+
+  /* =======================================================
+     SIZE CARDS
+  ======================================================== */
+
+  .rent-size-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .rent-size-card {
+    min-height: 88px;
+
+    padding: 12px;
+
+    gap: 10px;
+
+    border-radius: 13px;
+  }
+
+  .rent-size-number {
+    min-width: 40px;
+
+    font-size: 21px;
+  }
+
+  .rent-size-number span {
+    font-size: 9px;
+  }
+
+  .rent-size-info h3 {
+    font-size: 15px;
+  }
+
+  .rent-size-info span {
+    font-size: 13px;
+  }
+
+  .rent-size-card > svg {
+    width: 15px;
+
+    height: 15px;
+  }
+
+  /* =======================================================
+     CTA
+  ======================================================== */
+
+  .rent-cta-inner {
+    min-height: auto;
+
+    padding: 44px 0;
+
+    gap: 28px;
+  }
+
+  .rent-cta h2 {
+    font-size: 31px;
+
+    line-height: 1.05;
+  }
+
+  .rent-cta p {
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+
+  .rent-cta .rent-primary-btn {
+    width: 100%;
+  }
+
+  /* =======================================================
+     LOADING
+  ======================================================== */
+
+  .rent-loading {
+    min-height: 300px;
+  }
+
+  .rent-loading p {
+    font-size: 16px;
+  }
+
+  /* =======================================================
+     ERROR
+  ======================================================== */
+
+  .rent-error {
+    min-height: 300px;
+  }
+
+  .rent-error h2 {
+    font-size: 28px;
+  }
+
+  .rent-error p {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .rent-container {
+    width: calc(100% - 16px);
+  }
+
+  .rent-card-grid {
+    gap: 8px;
+  }
+
+  .rent-trailer-card {
+    min-height: 235px;
+  }
+
+  .rent-card-face {
+    padding: 12px;
+  }
+
+  .rent-card-image {
+    height: 100px;
+
+    margin:
+      -12px
+      -12px
+      10px;
+  }
+
+  .rent-card-icon {
+    width: 35px;
+
+    height: 35px;
+
+    margin-bottom: 10px;
+  }
+
+  .rent-card-icon svg {
+    width: 16px;
+
+    height: 16px;
+  }
+
+  .rent-trailer-card h3 {
+    font-size: 17px;
+  }
+
+  .rent-trailer-card p {
+    font-size: 14px;
+
+    -webkit-line-clamp: 2;
+
+    line-clamp: 2;
+  }
+
+  .rent-card-link {
+    font-size: 13px;
+  }
+
+  .rent-size-number {
+    font-size: 19px;
+  }
+
+  .rent-size-info h3 {
+    font-size: 13.5px;
+  }
+
+  .rent-size-info span {
+    font-size: 12px;
+  }
+
+  .rent-cta h2 {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .rent-hero-copy,
+  .rent-hero-stat,
+  .rent-search-box,
+  .rent-section-heading,
+  .rent-trailer-card,
+  .rent-card-icon,
+  .rent-hero-pill i,
+  .rent-hero-stat::before,
+  .rent-primary-btn::after,
+  .rent-dropdown-menu,
+  .rent-loader {
+    animation: none !important;
+  }
+
+  .rent-trailer-card,
+  .rent-card-icon {
+    transition: none !important;
+  }
+}
